@@ -28,7 +28,7 @@
         ),
     ];
 
-    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_cropratiothumb'] = [
+    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_cropratio'] = [
         'exclude' => 1,
         'label'   => 'Crop',
         'config'  => array(
@@ -133,7 +133,7 @@
        'showitem' => '
              --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
              --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,
-             --palette--;Thumbnails;gallerycontentThumbSettings,
+             --palette--;Images;gallerycontentSettings,
              --palette--;Click enlarge;gallerycontentZoomSettings,assets,
              --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
@@ -261,8 +261,8 @@
             ],
         ]);
 
-    $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentThumbSettings']['showitem'] = '
-        tx_gallerycontent_template,imagecols,tx_gallerycontent_cropratiothumb,
+    $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentSettings']['showitem'] = '
+        tx_gallerycontent_template,imagecols,tx_gallerycontent_cropratio,
         tx_gallerycontent_showtitle,tx_gallerycontent_showdesc,
         tx_gallerycontent_paginate,tx_gallerycontent_paginateitems,
     ';

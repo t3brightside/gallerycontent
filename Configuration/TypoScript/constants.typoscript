@@ -4,15 +4,15 @@
 	gallerycontent.templateRootPath = EXT:gallerycontent/Resources/Private/Templates/
 # cat=Gallerycontent/gallerycontent; type=string; label= Partials root paht
 	gallerycontent.partialRootPath = EXT:gallerycontent/Resources/Private/Partials/
-# cat=Gallerycontent/gallerycontent; type=string; label= Layouts root paht
-	gallerycontent.layoutRootPath = EXT:gallerycontent/Resources/Private/Layouts/
-# cat=Gallerycontent/gallerycontent; type=string; label= Maximum thumbnail with in one column layout in px
-	gallerycontent.maxThumbWidth = 1320
-# cat=Gallerycontent/gallerycontent; type=string; label= Padding between thumbnails in % of outside container
-	gallerycontent.thumbPadding = 2
+# cat=Gallerycontent/gallerycontent; type=string; label= Maximum image with in one column layout in px
+	gallerycontent.imageWidth = 1300
+# cat=Gallerycontent/gallerycontent; type=string; label= Padding between images in % of outside container
+	gallerycontent.imagePadding = 2
 # cat=Gallerycontent/gallerycontent; type=string; label= Maximum click enlarge image with in px
-	gallerycontent.maxZoomWidth = 1800
+	gallerycontent.zoomMaxWidth = 1800
 # cat=Gallerycontent/gallerycontent; type=string; label= Maximum click enlarge image height in px
-	gallerycontent.maxZoomHeight = 1200
-# cat=Gallerycontent/gallerycontent; type=string; label= Maximum pagination page links shown at time
+	gallerycontent.zoomMaxHeight = 1200
+# cat=Gallerycontent/gallerycontent; type=string; label= Maximum pagination page links shown
 	gallerycontent.paginationLinks = 6
+# cat=Gallerycontent/gallerycontent; type=string; label= Lightbox link class
+	gallerycontent.lightboxClass = lightbox

@@ -20,9 +20,12 @@ tt_content.gallerycontent {
         }
     }
     settings {
-        maxThumbWidth = {$gallerycontent.maxThumbWidth}
+        maxThumbWidth = {$gallerycontent.imageWidth}
+        imagePadding = {$gallerycontent.imagePadding}
+        zoomMaxWidth = {$gallerycontent.zoomMaxWidth}
+        zoomMaxHeight = {$gallerycontent.zoomMaxHeight}
         paginationLinks = {$gallerycontent.paginationLinks}
-        thumbPadding = {$gallerycontent.thumbPadding}
+        lightboxClass = {$gallerycontent.lightboxClass}
     }
     extbase {
         pluginName = Gallerycontent

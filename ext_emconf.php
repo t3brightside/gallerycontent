@@ -1,7 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
 	'title' => 'Gallerycontent',
-	'description' => 'Content element for gallery with preset crop ratios',
+	'description' => 'Content element for image gallery with preset crop ratios',
 	'category' => 'fe',
 	'version' => '0.0.1',
 	'state' => 'stable',
