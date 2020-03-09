@@ -1,0 +1,36 @@
+<div class="item" style="width: {itemWidth}%">
+    <f:if condition="{data.image_zoom}">
+        <a href="{f:uri.image(image:'{asset}', width:'1800', cropVariant:'{data.tx_gallerycontent_cropratiozoom}')}" class="lightbox" title="{asset.properties.title  -> f:format.stripTags()}" data-title="{asset.properties.description}">
+    </f:if>
+        <f:image
+            image="{asset}"
+            class="image"
+            cropVariant="{data.tx_gallerycontent_cropratiothumb}"
+            width="{thumbWidth}"
+            alt="{f:if(condition:'{asset.properties.alternative}', then:'{asset.properties.alternative -> f:format.stripTags()}', else:'{asset.properties.title -> f:format.stripTags()}')}"
+            additionalAttributes="{srcset: '{f:uri.image(image:\'{asset}\', cropVariant:\'{data.tx_gallerycontent_cropratiothumb}\', width:\'{thumbWidth_x2}\')}'}"
+            title="{asset.properties.title -> f:format.stripTags()}"
+        />
+    <f:if condition="{data.image_zoom}">
+        </a>
+    </f:if>
+    <f:if condition="{data.tx_gallerycontent_showtitle} || {data.tx_gallerycontent_showdesc}">
+        <f:if condition="{asset.properties.title} || {asset.properties.description}">
+            <figcaption>
+                <f:if condition="{data.tx_gallerycontent_showtitle} && {data.tx_gallerycontent_showdesc} && {asset.properties.title}"><b></f:if>
+                <f:if condition="{data.tx_gallerycontent_showtitle} && {asset.properties.title}"><f:format.raw><span class="title">{asset.properties.title -> f:format.stripTags(allowedTags: "<b><strong><br />")}</span></f:format.raw></f:if>
+                <f:if condition="{data.tx_gallerycontent_showtitle} && {data.tx_gallerycontent_showdesc} && {asset.properties.title}"></b></f:if>
+                <f:if condition="{data.tx_gallerycontent_showtitle} && {data.tx_gallerycontent_showdesc} && {asset.properties.description} && {asset.properties.title}"><br /></f:if>
+                <f:if condition="{data.tx_gallerycontent_showdesc} && {asset.properties.description}"><f:format.raw><span class="desc">{asset.properties.description -> f:format.stripTags(allowedTags: "<b><strong><br />")}</span></f:format.raw></f:if>
+            </figcaption>
+        </f:if>
+    </f:if>
+</div>
+<f:if condition="{iterator.isFirst} == 1">
+    <f:then>
+        <div class="space nr-{data.uid}" id="firstSpace-{data.uid}" style="width: {spaceWidth}%;"></div>
+    </f:then>
+    <f:else>
+        <div class="space nr-{data.uid}" style="width: {spaceWidth}%;"></div>
+    </f:else>
+</f:if>

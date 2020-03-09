@@ -1,0 +1,37 @@
+page.includeCSS.gallerycontent = {$gallerycontent.styles}
+
+lib.gallerycontent =< lib.contentElement
+lib.gallerycontent.templateRootPaths.10 = EXT:gallerycontent/Resources/Private/Templates/
+lib.gallerycontent.templateRootPaths.20 = {$gallerycontent.templateRootPath}
+lib.gallerycontent.partialRootPaths.10 = EXT:gallerycontent/Resources/Private/Partials/
+lib.gallerycontent.partialRootPaths.20 = {$gallerycontent.partialRootPath}
+lib.gallerycontent.layoutRootPaths.10 = EXT:fluid_styled_content/Resources/Private/Layouts/
+lib.gallerycontent.layoutRootPaths.20 = EXT:gallerycontent/Resources/Private/Layouts/
+lib.gallerycontent.layoutRootPaths.30 = {$styles.templates.layoutRootPath}
+
+tt_content.gallerycontent =< lib.gallerycontent
+tt_content.gallerycontent {
+    templateName = Gallerycontent
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+            references.fieldName = assets
+            as = assets
+        }
+    }
+    settings {
+        maxThumbWidth = {$gallerycontent.maxThumbWidth}
+        paginationLinks = {$gallerycontent.paginationLinks}
+        thumbPadding = {$gallerycontent.thumbPadding}
+    }
+    extbase {
+        pluginName = Gallerycontent
+        controllerName = Gallerycontent
+        controllerExtensionName = gallerycontent
+        controllerActionName = show
+    }
+    stdWrap {
+        editIcons = tt_content: header [header_layout], tt_content
+        editIcons.iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.menu
+    }
+}

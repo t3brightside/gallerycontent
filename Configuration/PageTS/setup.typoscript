@@ -1,0 +1,40 @@
+
+mod.wizards.newContentElement.wizardItems.common {
+   elements {
+      brightsidegallery {
+         iconIdentifier = mimetypes-x-content-gallerycontent
+         title = Gallery
+         description = Image gallery content element
+         tt_content_defValues {
+            CType = gallerycontent
+         }
+      }
+   }
+   show := addToList(brightsidegallery)
+}
+
+TCEFORM.tt_content.tx_gallerycontent_template.addItems {
+	0 = Gallery Style One
+	1 = Gallery Style Two
+}
+
+
+TCEFORM.tt_content.tx_gallerycontent_cropratiothumb.addItems {
+	default = Default
+    landscape = Landscape (4:3)
+    landscapewide = Landscape (16:9)
+	square = Square (1:1)
+    portrait = Portrait (3:4)
+    tower = Tower (9:16)
+    none = None
+}
+
+TCEFORM.tt_content.tx_gallerycontent_cropratiozoom.addItems {
+    default = Default
+    landscape = Landscape (4:3)
+    landscapewide = Landscape (16:9)
+	square = Square (1:1)
+    portrait = Portrait (3:4)
+    tower = Tower (9:16)
+    none = None
+}

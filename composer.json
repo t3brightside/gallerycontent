@@ -1,0 +1,26 @@
+{
+  "name": "t3brightside/gallerycontent",
+  "description": "TYPO3 CMS extension to create simple image gallery as a content element.",
+  "type": "typo3-cms-extension",
+  "version": "0.0.1",
+  "keywords": ["TYPO3", "extension", "images", "gallery", "content", "slide"],
+  "homepage": "https://github.com/t3brightside/gallerycontent/",
+  "license": "GPL-3.0+",
+  "authors": [
+      {
+          "name": "Tanel Põld",
+          "role": "Developer",
+          "email": "info@t3brightside.com",
+          "homepage": "https://t3brightside.com"
+      }
+  ],
+  "require": {
+    "typo3/cms-core": "^9.5",
+    "typo3/cms-fluid-styled-content": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Brightside\\Gallerycontent\\": "Classes"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.gallerycontent * {
+    box-sizing: border-box;
+}
+
+.gallerycontent {
+    width: 100%;
+}
+
+.gallerycontent>.item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallerycontent>.item {
+    float: left;
+}
+
+.gallerycontent>.item a:hover {
+    text-decoration: none;
+}
+
+.gallerycontent>.space {
+    float: left;
+}
+
+.gallerycontent>.item figcaption {
+    display: inline-block;
+    padding-top: 0.5em;
+    font-size: .75em;
+    line-height: 1.4em;
+}
+
+.gallerycontent .item .title {}
+
+.gallerycontent .item .desc {}
+
+/* column layouts */
+.gallerycontent.colcount-1 .space,
+.gallerycontent.colcount-3 .space:nth-child(3n),
+.gallerycontent.colcount-2 .space:nth-child(4n),
+.gallerycontent.colcount-4 .space:nth-child(8n),
+.gallerycontent.colcount-5 .space:nth-child(10n),
+.gallerycontent.colcount-6 .space:nth-child(12n),
+.gallerycontent.colcount-7 .space:nth-child(14n),
+.gallerycontent.colcount-8 .space:nth-child(16n) {
+    width: 100% !important;
+}

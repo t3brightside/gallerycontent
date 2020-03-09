@@ -1,0 +1,59 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:layout name="Default" />
+	<f:section name="Main">
+		<f:variable name="spaceWidth">{settings.thumbPadding}</f:variable>
+		<f:comment>
+			Example:
+			for conditional space width
+			<f:if condition="{data.tx_gridelements_columns} == 101">
+				<f:variable name="spaceWidth">4</f:variable>
+			</f:if>
+		</f:comment>
+		<f:variable name="spaceWidthTotal">{data.imagecols - 1 * spaceWidth}</f:variable>
+		<f:variable name="itemWidth">{100 - spaceWidthTotal / data.imagecols}</f:variable>
+		<f:variable name="thumbWidthSet">{settings.maxThumbWidth}</f:variable>
+		<f:comment>
+			Example:
+			for conditional thmbnail width for better image optimization
+			<f:if condition="{data.tx_gridelements_columns} == 101">
+				<f:variable name="thumbWidthSet">627</f:variable>
+			</f:if>
+		</f:comment>
+		<f:variable name="thumbWidth">{thumbWidthSet / data.imagecols}</f:variable>
+		<f:variable name="thumbWidth_x2">{thumbWidth * 2}</f:variable>
+
+		<f:if condition="{data.tx_gallerycontent_template} == 0">
+			<div id="gallerycontent-{data.uid}" class="gallerycontent template-{data.tx_gallerycontent_template} colcount-{data.imagecols}">
+				<f:if condition="{data.tx_gallerycontent_paginate} == 1">
+					<f:then>
+						<f:widget.paginate objects="{assets}" as="paginatedAssets" configuration="{itemsPerPage: '{data.tx_gallerycontent_paginateitems}', insertAbove: 0, insertBelow: 1, maximumNumberOfLinks: '{settings.paginationLinks}'}">
+							<f:for each="{paginatedAssets}" as="asset" iteration="iterator">
+								<f:render partial="Image" arguments="{_all}" />
+							</f:for>
+						</f:widget.paginate>
+					</f:then>
+					<f:else>
+						<f:for each="{assets}" as="asset" iteration="iterator">
+							<f:render partial="Image" arguments="{_all}" />
+						</f:for>
+					</f:else>
+				</f:if>
+			</div>
+		</f:if>
+		<script type="text/javascript">
+			function setSpaceHeight{data.uid}() {
+				var gallerycontent = document.getElementById("gallerycontent-{data.uid}");
+				var firstSpace = gallerycontent.childNodes[1];
+				var width = firstSpace.getBoundingClientRect().width;
+				var spaceElement = gallerycontent.querySelectorAll('.space');
+				for(var i=0;i<spaceElement.length;i++){
+					spaceElement[i].style.height = width+"px";
+				}
+			}
+			setSpaceHeight{data.uid}();
+			window.addEventListener('resize', function(event){
+				setSpaceHeight{data.uid}();
+			});
+		</script>
+	</f:section>
+</html>
