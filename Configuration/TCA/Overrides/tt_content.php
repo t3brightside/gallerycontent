@@ -101,7 +101,7 @@
     ];
     $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_showtitlezoom'] = [
         'exclude' => 1,
-        'label' => 'Show titles',
+        'label' => 'Show title',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
@@ -115,7 +115,7 @@
     ];
     $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_showdesczoom'] = [
         'exclude' => 1,
-        'label' => 'Show descriptions',
+        'label' => 'Show description',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
