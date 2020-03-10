@@ -11,15 +11,14 @@
 		</f:comment>
 		<f:variable name="spaceWidthTotal">{data.imagecols - 1 * spaceWidth}</f:variable>
 		<f:variable name="itemWidth">{100 - spaceWidthTotal / data.imagecols}</f:variable>
-		<f:variable name="imageWidthSet">{settings.imageWidth}</f:variable>
 		<f:comment>
 			Example:
 			for conditional thmbnail width for better image optimization
 			<f:if condition="{data.tx_gridelements_columns} == 101">
-				<f:variable name="imageWidthSet">627</f:variable>
+				<f:variable name="imageWidthOne">627</f:variable>
 			</f:if>
 		</f:comment>
-		<f:variable name="imageWidth">{imageWidthSet / data.imagecols}</f:variable>
+		<f:variable name="imageWidth">{settings.imageWidth / data.imagecols}</f:variable>
 		<f:variable name="imageWidth_x2">{imageWidth * 2}</f:variable>
 
 		<f:if condition="{data.tx_gallerycontent_template} == 0">
