@@ -36,12 +36,18 @@ class ContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInterfa
 			if ($row['tx_gallerycontent_showdesc'] === 1) {
 				$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Show descriptions: yes'), $row) . '</li>';
 			}
-			$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Thumbnail crop: ' . $row['tx_gallerycontent_cropratiothumb']), $row) . '</li>';
+			$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Image crop: ' . $row['tx_gallerycontent_cropratio']), $row) . '</li>';
 			if ($row['image_zoom'] === 1) {
 				$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Click-enlarge: yes'), $row) . '</li>';
 			}
 			if ($row['image_zoom'] === 1) {
 				$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Click-enlarge crop: ' . $row['tx_gallerycontent_cropratiozoom']), $row) . '</li>';
+			}
+			if ($row['tx_gallerycontent_paginate'] === 1) {
+				$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Pagination: yes'), $row) . '</li>';
+			}
+			if ($row['tx_gallerycontent_paginateitems'] && $row['tx_gallerycontent_paginate'] === 1) {
+				$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Items per page: ' . $row['tx_gallerycontent_paginateitems']), $row) . '</li>';
 			}
 			$itemContent .= '</ul>';
 			$drawItem = FALSE;
