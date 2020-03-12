@@ -7,12 +7,12 @@
 # cat=Gallerycontent/gallerycontent; type=string; label= Maximum image with in one column layout in px
 	gallerycontent.imageWidth = 1320
 # cat=Gallerycontent/gallerycontent; type=string; label= Padding between images in % of outside container
-	gallerycontent.imagePadding = 1
+	gallerycontent.imagePadding = 1.5
 # cat=Gallerycontent/gallerycontent; type=string; label= Maximum click enlarge image with in px
 	gallerycontent.zoomMaxWidth = 1800
 # cat=Gallerycontent/gallerycontent; type=string; label= Maximum click enlarge image height in px
 	gallerycontent.zoomMaxHeight = 1200
-# cat=Gallerycontent/gallerycontent; type=string; label= Maximum pagination page links shown
+# cat=Gallerycontent/gallerycontent; type=string; label= Maximum pagination links shown
 	gallerycontent.paginationLinks = 6
 # cat=Gallerycontent/gallerycontent; type=string; label= Lightbox link class
 	gallerycontent.lightboxClass = lightbox

@@ -19,9 +19,6 @@
 				<f:variable name="imageWidthSet">627</f:variable>
 			</f:if>
 		</f:comment>
-		<f:if condition="{data.tx_gridelements_columns} == 101">
-			<f:variable name="imageWidthSet">627</f:variable>
-		</f:if>
 		<f:variable name="spaceInPx">{data.imagecols - 1 * settings.imagePadding / 100 * imageWidthSet}</f:variable>
 		<f:variable name="imageWidth">{imageWidthSet - spaceInPx / data.imagecols}</f:variable>
 		<f:variable name="imageWidth_x2">{imageWidth * 2}</f:variable>
