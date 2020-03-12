@@ -5,9 +5,9 @@
 # cat=Gallerycontent/gallerycontent; type=string; label= Partials root paht
 	gallerycontent.partialRootPath = EXT:gallerycontent/Resources/Private/Partials/
 # cat=Gallerycontent/gallerycontent; type=string; label= Maximum image with in one column layout in px
-	gallerycontent.imageWidth = 1300
+	gallerycontent.imageWidth = 1320
 # cat=Gallerycontent/gallerycontent; type=string; label= Padding between images in % of outside container
-	gallerycontent.imagePadding = 2
+	gallerycontent.imagePadding = 1
 # cat=Gallerycontent/gallerycontent; type=string; label= Maximum click enlarge image with in px
 	gallerycontent.zoomMaxWidth = 1800
 # cat=Gallerycontent/gallerycontent; type=string; label= Maximum click enlarge image height in px
