@@ -6,7 +6,7 @@
 **TYPO3 CMS extension for galleries as content elements.**
 <br />Automatic image optimisation and easy to add custom templates.
 
-**[Demo page](https://microtemplate.t3brightside.com/)**
+**[Demo page](https://macrotemplate.t3brightside.com/)**
 
 ## System requirements
 
