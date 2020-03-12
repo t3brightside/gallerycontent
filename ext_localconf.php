@@ -8,4 +8,4 @@
 		['source' => 'EXT:gallerycontent/Resources/Public/Images/Icons/mimetypes-x-content-gallerycontent.svg']
 	);
 
-# $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['gallerycontent'] = \Brightside\Gallerycontent\Hooks\PageLayoutView\ContentElementPreviewRenderer::class;
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['gallerycontent'] = \Brightside\Gallerycontent\Hooks\PageLayoutView\ContentElementPreviewRenderer::class;
