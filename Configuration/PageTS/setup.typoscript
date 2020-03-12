@@ -27,7 +27,7 @@ TCEFORM.tt_content.tx_gallerycontent_cropratio.addItems {
 	square = Square (1:1)
     portrait = Portrait (3:4)
     tower = Tower (9:16)
-    stripe = Stripe (1:2.39)
+    skyscraper = Skyscraper (1:2.39)
     none = None
 }
 
@@ -39,6 +39,6 @@ TCEFORM.tt_content.tx_gallerycontent_cropratiozoom.addItems {
 	square = Square (1:1)
     portrait = Portrait (3:4)
     tower = Tower (9:16)
-    stripe = Stripe (1:2.39)
+    skyscraper = Skyscraper (1:2.39)
     none = None
 }

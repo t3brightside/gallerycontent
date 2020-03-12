@@ -260,12 +260,12 @@
                                             ],
                                         ],
                                     ],
-                                    'stripe' => [
-                                        'title' => 'Stripe (1:2.39)',
+                                    'skyscraper' => [
+                                        'title' => 'Skyscraper (1:2.39)',
                                         'selectedRatio' => '1:2.39',
                                         'allowedAspectRatios' => [
                                             '1:2.39' => [
-                                                'title' => 'Stripe',
+                                                'title' => 'Skyscraper',
                                                 'value' => 1 / 2.39,
                                             ],
                                         ],
