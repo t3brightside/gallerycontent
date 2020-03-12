@@ -18,7 +18,7 @@
 - Automatic image optimisation
 - Predefined aspect ratios for images and click-enlarge
 - Enable/disable image title and description
-- Pagination
+- Pagination control
 
 ## Install
 - Install from TER **gellerycontent** or composer **t3brightside/gellerycontent**
