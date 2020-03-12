@@ -21,20 +21,24 @@ TCEFORM.tt_content.tx_gallerycontent_template.addItems {
 
 TCEFORM.tt_content.tx_gallerycontent_cropratio.addItems {
 	default = Default
-    landscape = Landscape (4:3)
-    landscapewide = Landscape (16:9)
+    tv = TV (4:3)
+    widescreen = Widescreen (16:9)
+    anamorphic = Anamorphic (2.39:1)
 	square = Square (1:1)
     portrait = Portrait (3:4)
     tower = Tower (9:16)
+    stripe = Stripe (1:2.39)
     none = None
 }
 
 TCEFORM.tt_content.tx_gallerycontent_cropratiozoom.addItems {
     default = Default
-    landscape = Landscape (4:3)
-    landscapewide = Landscape (16:9)
+    tv = TV (4:3)
+    widescreen = Widescreen (16:9)
+    anamorphic = Anamorphic (2.39:1)
 	square = Square (1:1)
     portrait = Portrait (3:4)
     tower = Tower (9:16)
+    stripe = Stripe (1:2.39)
     none = None
 }

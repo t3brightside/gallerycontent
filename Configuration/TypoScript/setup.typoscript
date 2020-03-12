@@ -20,7 +20,7 @@ tt_content.gallerycontent {
         }
     }
     settings {
-        imageWidthOne = {$gallerycontent.imageWidth}
+        imageWidth = {$gallerycontent.imageWidth}
         imagePadding = {$gallerycontent.imagePadding}
         zoomMaxWidth = {$gallerycontent.zoomMaxWidth}
         zoomMaxHeight = {$gallerycontent.zoomMaxHeight}

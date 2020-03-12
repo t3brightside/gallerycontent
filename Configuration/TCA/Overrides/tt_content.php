@@ -200,23 +200,33 @@
                                             'height' => 1.0,
                                         ],
                                     ],
-                                    'landscape' => [
-                                        'title' => 'Landscape (4:3)',
+                                    'tv' => [
+                                        'title' => 'TV (4:3)',
                                         'selectedRatio' => '4:3',
                                         'allowedAspectRatios' => [
-                                            '590:414' => [
-                                                'title' => 'Landscape',
+                                            '4:3' => [
+                                                'title' => 'TV',
                                                 'value' => 4 / 3,
                                             ],
                                         ],
                                     ],
-                                    'landscapewide' => [
-                                        'title' => 'Landscape (16:9)',
+                                    'widescreen' => [
+                                        'title' => 'Widescreen (16:9)',
                                         'selectedRatio' => '16:9',
                                         'allowedAspectRatios' => [
-                                            '590:414' => [
-                                                'title' => 'Landscape',
+                                            '16:9' => [
+                                                'title' => 'Widescreen',
                                                 'value' => 16 / 9,
+                                            ],
+                                        ],
+                                    ],
+                                    'anamorphic' => [
+                                        'title' => 'Anamorphic (2.39:1)',
+                                        'selectedRatio' => '2.39:1',
+                                        'allowedAspectRatios' => [
+                                            '2.39:1' => [
+                                                'title' => 'Anamorphic',
+                                                'value' => 2.39 / 1,
                                             ],
                                         ],
                                     ],
@@ -247,6 +257,16 @@
                                             '9:16' => [
                                                 'title' => 'Tower',
                                                 'value' => 9 / 16,
+                                            ],
+                                        ],
+                                    ],
+                                    'stripe' => [
+                                        'title' => 'Stripe (1:2.39)',
+                                        'selectedRatio' => '1:2.39',
+                                        'allowedAspectRatios' => [
+                                            '1:2.39' => [
+                                                'title' => 'Stripe',
+                                                'value' => 1 / 2.39,
                                             ],
                                         ],
                                     ],

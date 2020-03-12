@@ -1,6 +1,6 @@
 {
   "name": "t3brightside/gallerycontent",
-  "description": "TYPO3 CMS extension to create image gallery as a content elements.",
+  "description": "TYPO3 CMS extension to create image gallery as a content element.",
   "type": "typo3-cms-extension",
   "version": "0.0.1",
   "keywords": ["TYPO3", "extension", "images", "gallery", "content"],
