@@ -1,3 +1,4 @@
 2020-03-13
 	* 0.0.2
 		– Bug fix: space height CSS for one column layout
+		– Archiving error in TER package fixed
