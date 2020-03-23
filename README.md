@@ -21,14 +21,14 @@
 - Pagination control
 
 ## Install
-- Install from TER **gellerycontent** or composer **t3brightside/gellerycontent**
+- Install from TER **gallerycontent** or composer **t3brightside/gallerycontent**
 – Include static templates to root template
 
 ## Sources
 
-- [GitHub](https://github.com/t3brightside/gellerycontent)
-- [Packagist](https://packagist.org/packages/t3brightside/gellerycontent)
-- [TER](https://extensions.typo3.org/extension/gellerycontent/)
+- [GitHub](https://github.com/t3brightside/gallerycontent)
+- [Packagist](https://packagist.org/packages/t3brightside/gallerycontent)
+- [TER](https://extensions.typo3.org/extension/gallerycontent/)
 
 ## Development and maintenance
 
