@@ -2,3 +2,6 @@
 	* 0.0.2
 		– Bug fix: space height CSS for one column layout
 		– Archiving error in TER package fixed
+	* 0.1.0
+		– TYPO3 10 LTS compatible
+		– JavaScript fix for row spacing height

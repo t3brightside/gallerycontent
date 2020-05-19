@@ -28,10 +28,10 @@ tt_content.gallerycontent {
         lightboxClass = {$gallerycontent.lightboxClass}
     }
     extbase {
-        pluginName = Gallerycontent
         controllerName = Gallerycontent
-        controllerExtensionName = gallerycontent
-        controllerActionName = show
+        controllerActionName = gallerycontent
+        controllerExtensionName = Gallerycontent
+        pluginName = Gallerycontent
     }
     stdWrap {
         editIcons = tt_content: header [header_layout], tt_content
