@@ -4,6 +4,8 @@
 
 .gallerycontent {
     width: 100%;
+    height: auto;
+    overflow: auto;
 }
 
 .gallerycontent>.item img {
