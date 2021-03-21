@@ -14,8 +14,8 @@ mod.wizards.newContentElement.wizardItems.common {
 }
 
 TCEFORM.tt_content.tx_gallerycontent_template.addItems {
-	0 = Style One
-	1 = Style Two
+	0 = Default
+	2 = Style Two
 }
 
 
