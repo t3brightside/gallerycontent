@@ -5,3 +5,5 @@
 	* 0.1.0
 		– TYPO3 10 LTS compatible
 		– JavaScript fix for row spacing height
+	* 0.1.1
+		– add ext key for composer
