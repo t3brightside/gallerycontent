@@ -7,3 +7,4 @@
 		– JavaScript fix for row spacing height
 	* 0.1.1
 		– add ext key for composer
+		– make meaningful template class names possible
