@@ -8,3 +8,4 @@
 	* 0.1.1
 		– add ext key for composer
 		– make meaningful template class names possible
+		– add ce-gallery class to the main container
