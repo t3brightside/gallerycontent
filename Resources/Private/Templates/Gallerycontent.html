@@ -44,10 +44,12 @@
 			function setSpaceHeight{data.uid}() {
 				var gallerycontent = document.getElementById("gallerycontent-{data.uid}");
 				var firstSpace = gallerycontent.querySelector(".space");
-				var width = firstSpace.getBoundingClientRect().width;
-				var spaceElement = gallerycontent.querySelectorAll('.space');
-				for(var i=0;i<spaceElement.length;i++){
-					spaceElement[i].style.height = width+"px";
+				if (firstSpace) {
+					var width = firstSpace.getBoundingClientRect().width;
+					var spaceElement = gallerycontent.querySelectorAll('.space');
+					for(var i=0;i<spaceElement.length;i++){
+						spaceElement[i].style.height = width+"px";
+					}
 				}
 			}
 			setSpaceHeight{data.uid}();
