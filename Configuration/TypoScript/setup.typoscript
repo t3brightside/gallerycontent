@@ -13,7 +13,7 @@ tt_content.gallerycontent =< lib.gallerycontent
 tt_content.gallerycontent {
     templateName = Gallerycontent
     dataProcessing {
-        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
         10 {
             references.fieldName = assets
             as = assets
