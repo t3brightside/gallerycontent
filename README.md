@@ -10,8 +10,9 @@
 
 ## System requirements
 
-- TYPO3 9.5 LTS & 10.4 LTS
+- TYPO3
 - fluid_styled_content
+- paginatedprocessors
 
 ## Features
 
@@ -21,8 +22,9 @@
 - Pagination control
 
 ## Install
-- Install from TER **gallerycontent** or composer **t3brightside/gallerycontent**
-– Include static templates to root template
+- composer req **t3brightside/gallerycontent**, or TER **gallerycontent**
+- Include static templates to root template
+- for routeEnhancers check  [paginatedprocessors](https://github.com/t3brightside/paginatedprocessors/blob/master/README.md)
 
 ## Sources
 

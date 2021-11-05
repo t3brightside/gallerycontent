@@ -15,6 +15,12 @@ tt_content.gallerycontent {
     dataProcessing {
         10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
         10 {
+            pagination {
+              isActive.field = tx_gallerycontent_paginate
+              itemsPerPage.field = tx_gallerycontent_paginateitems
+              paginationPageUrlKey = paginationPage
+              paginationElementIdUrlKey = paginationElementId
+            }
             references.fieldName = assets
             as = assets
         }

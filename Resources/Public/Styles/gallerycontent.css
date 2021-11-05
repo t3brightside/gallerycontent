@@ -24,6 +24,7 @@
 
 .gallerycontent>.space {
     float: left;
+    min-height: 1px;
 }
 
 .gallerycontent>.item figcaption {
