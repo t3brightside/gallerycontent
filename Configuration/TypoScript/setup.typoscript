@@ -18,8 +18,6 @@ tt_content.gallerycontent {
             pagination {
               isActive.field = tx_gallerycontent_paginate
               itemsPerPage.field = tx_gallerycontent_paginateitems
-              paginationPageUrlKey = paginationPage
-              paginationElementIdUrlKey = paginationElementId
             }
             references.fieldName = assets
             as = assets
