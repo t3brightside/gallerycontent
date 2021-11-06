@@ -27,7 +27,7 @@
 				<f:for each="{assets}" as="asset" iteration="iterator">
 					<f:render partial="Item" arguments="{_all}" />
 				</f:for>
-				<f:if condition="{data.tx_gallerycontent_paginate} == 1">
+				<f:if condition="{pagination.numberOfPages} > 1">
 					<f:render partial="Pagination" arguments="{_all}" />
 				</f:if>
 			</div>
