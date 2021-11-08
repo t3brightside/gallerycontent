@@ -76,7 +76,7 @@
             ],
         ]
     ];
-    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_paginate'] = [
+    $GLOBALS['TCA']['tt_content']['columns']['tx_paginatedprocessors_paginationenabled'] = [
         'exclude' => 1,
         'label' => 'Pagination',
         'config' => [
@@ -90,7 +90,7 @@
             ],
         ]
     ];
-    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_paginateitems'] = [
+    $GLOBALS['TCA']['tt_content']['columns']['tx_paginatedprocessors_itemsperpage'] = [
         'exclude' => 1,
         'label' => 'Items per page',
         'config' => array(
@@ -284,7 +284,7 @@
     $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentSettings']['showitem'] = '
         tx_gallerycontent_template,imagecols,tx_gallerycontent_cropratio,
         tx_gallerycontent_showtitle,tx_gallerycontent_showdesc,
-        tx_gallerycontent_paginate,tx_gallerycontent_paginateitems,
+        tx_paginatedprocessors_paginationenabled,tx_paginatedprocessors_itemsperpage,
     ';
     $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentZoomSettings']['showitem'] = '
         image_zoom,tx_gallerycontent_cropratiozoom,tx_gallerycontent_showtitlezoom,tx_gallerycontent_showdesczoom,

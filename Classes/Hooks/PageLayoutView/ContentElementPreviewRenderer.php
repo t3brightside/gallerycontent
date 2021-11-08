@@ -43,11 +43,11 @@ class ContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInterfa
 			if ($row['image_zoom'] === 1) {
 				$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Click-enlarge crop: ' . $row['tx_gallerycontent_cropratiozoom']), $row) . '</li>';
 			}
-			if ($row['tx_gallerycontent_paginate'] === 1) {
-				$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Pagination: yes'), $row) . '</li>';
+			if ($row['tx_paginatedprocessors_paginationenabled'] === 1) {
+				$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Pagination: enabled'), $row) . '</li>';
 			}
-			if ($row['tx_gallerycontent_paginateitems'] && $row['tx_gallerycontent_paginate'] === 1) {
-				$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Items per page: ' . $row['tx_gallerycontent_paginateitems']), $row) . '</li>';
+			if ($row['tx_paginatedprocessors_itemsperpage'] && $row['tx_paginatedprocessors_paginationenabled'] === 1) {
+				$itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Items per page: ' . $row['tx_paginatedprocessors_itemsperpage']), $row) . '</li>';
 			}
 			$itemContent .= '</ul>';
 			$drawItem = FALSE;

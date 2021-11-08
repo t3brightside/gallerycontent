@@ -17,8 +17,8 @@ tt_content.gallerycontent {
         10 {
             pagination {
               uniqueId.field = uid
-              isActive.field = tx_gallerycontent_paginate
-              itemsPerPage.field = tx_gallerycontent_paginateitems
+              isActive.field = tx_paginatedprocessors_paginationenabled
+              itemsPerPage.field = tx_paginatedprocessors_itemsperpage
             }
             references.fieldName = assets
             as = assets
