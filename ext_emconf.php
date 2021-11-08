@@ -1,12 +1,10 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
 	'title' => 'Gallerycontent',
-	'description' => 'Content element for image gallery with preset crop ratios',
+	'description' => 'Content element for image gallery with preset crop ratios and pagination',
 	'category' => 'fe',
-	'version' => '0.1.4',
+	'version' => '0.2.0',
 	'state' => 'stable',
-	'uploadfolder' => false,
-	'createDirs' => '',
 	'clearcacheonload' => true,
 	'author' => 'Tanel Põld',
 	'author_email' => 'tanel@brightside.ee',
@@ -15,6 +13,10 @@ $EM_CONF[$_EXTKEY] = [
 		'depends' => [
 			'typo3' => '11.5.0 - 11.5.99',
 			'fluid_styled_content' => '',
+			'paginatedprocessors' => '',
 		],
+		'autoload' => [
+        'classmap' => ['Classes'],
+    ],
 	],
 ];
