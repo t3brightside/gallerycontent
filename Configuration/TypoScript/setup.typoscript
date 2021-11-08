@@ -16,6 +16,8 @@ tt_content.gallerycontent {
         10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
         10 {
             pagination {
+              uniqueId = pildid
+              uniquePaginatorName = 0
               isActive.field = tx_gallerycontent_paginate
               itemsPerPage.field = tx_gallerycontent_paginateitems
             }
