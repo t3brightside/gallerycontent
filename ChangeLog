@@ -1,15 +1,19 @@
-2020-03-13
-	* 0.0.2
-		– Bug fix: space height CSS for one column layout
-		– Archiving error in TER package fixed
-	* 0.1.0
-		– TYPO3 10 LTS compatible
-		– JavaScript fix for row spacing height
-	* 0.1.1
-		– add ext key for composer
-		– make meaningful template class names possible
-		– add ce-gallery class to the main container
-	* 0.1.2
-		– TYPO3 11 compatibility
-	* 1.0.0
-		– JavaScript fix for one column layout
+* 0.0.2
+	– Bug fix: space height CSS for one column layout
+	– Archiving error in TER package fixed
+* 0.1.0
+	– TYPO3 10 LTS compatible
+	– JavaScript fix for row spacing height
+* 0.1.1
+	– add ext key for composer
+	– make meaningful template class names possible
+	– add ce-gallery class to the main container
+* 1.0.0
+	– TYPO3 11.5 support only
+	– JavaScript fix for one column layout
+	– BREAKING CHANGES
+		– No more pagination widget but requires t3brightside/paginatedprocessors
+		– Changes in pagination XML in Templates/Gallerycontent.html
+		– SQL to migrate yourself:
+			– tx_gallerycontent_pagination to tx_paginatedprocessors_paginationenabled
+			– tx_gallerycontent_paginateitems to tx_paginatedprocessors_itemsperpage
