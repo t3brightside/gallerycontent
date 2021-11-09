@@ -15,8 +15,5 @@ $EM_CONF[$_EXTKEY] = [
 			'fluid_styled_content' => '11.5.0 - 11.5.99',
 			'paginatedprocessors' => '1.0.0 - 1.0.99',
 		],
-		'autoload' => [
-        'classmap' => ['Classes'],
-    ],
 	],
 ];
