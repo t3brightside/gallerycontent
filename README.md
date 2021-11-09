@@ -8,6 +8,9 @@
 Automatic image optimisation, crop ratios and ready to go dynamic template
 **[Demo](https://microtemplate.t3brightside.com/)**
 
+### Breaking Changes
+**v1.0.0** see the [ChangeLog](ChangeLog)
+
 ### Features
 - Automatic image optimisation
 - Predefined aspect ratios for images and click-enlarge
