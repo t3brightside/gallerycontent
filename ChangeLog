@@ -17,3 +17,9 @@
 		– SQL to migrate yourself:
 			– tx_gallerycontent_pagination to tx_paginatedprocessors_paginationenabled
 			– tx_gallerycontent_paginateitems to tx_paginatedprocessors_itemsperpage
+* 1.1.0
+	– Move column/row space height calculations to a reusable function
+	– Code clean up
+	– Move gallery settings to a separate tab "Gallery"
+    – Option to turn pagination off in extension configuration
+    – Add pagination link control and URL segment

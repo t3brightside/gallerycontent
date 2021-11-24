@@ -4,7 +4,7 @@
 [![Downloads](https://poser.pugx.org/t3brightside/gallerycontent/downloads)](https://packagist.org/packages/t3brightside/pagelist)
 [![Brightside](https://img.shields.io/badge/by-t3brightside.com-orange.svg?style=flat)](https://t3brightside.com)
 
-**TYPO3 CMS extension for galleries as content elements**
+**TYPO3 CMS extension for well optimised image galleries**
 Automatic image optimisation, crop ratios and ready to go dynamic template
 **[Demo](https://microtemplate.t3brightside.com/)**
 
@@ -18,7 +18,7 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 - Pagination control
 
 ## System requirements
-- TYPO3 10.4 - TYPO3 11.5
+- TYPO3
 - fluid_styled_content
 - paginatedprocessors
 
@@ -26,7 +26,6 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 - **composer req t3brightside/gallerycontent** or from TYPO3 extension repository **[gallerycontent](https://extensions.typo3.org/extension/gallerycontent/)**
 - Include static template
 - Include static template for Paginatedprocessors
-- for routeEnhancers check  [paginatedprocessors](https://github.com/t3brightside/paginatedprocessors/blob/master/README.md)
 
 ## Sources
 - [GitHub](https://github.com/t3brightside/gallerycontent)
