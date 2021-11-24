@@ -113,15 +113,32 @@ $tempColumns = array(
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
 
-$GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = $GLOBALS['TCA']['tt_content']['types']['header']['showitem'];
-$GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = str_replace(
-    ';headers,',
-    ';header,
-    --palette--;Images;gallerycontentImages,
+
+$GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = '
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+        --palette--;;general,
+        --palette--;;headers,
+        --palette--;Images;gallerycontentImages,
     --div--;Gallery;,--palette--;Layout;gallerycontentLayout,
-    --palette--;Click Enlarge;gallerycontentZoom,',
-    $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem']
-);
+        --palette--;Click Enlarge;gallerycontentZoom,
+    --div--;Gallery;,
+        --palette--;Layout;youtubevideoLayout,
+    	--palette--;Pagination;paginatedprocessors,
+    --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+        --palette--;;frames,
+        --palette--;;appearanceLinks,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
+        --palette--;;language,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
+        --palette--;;hidden,
+        --palette--;;access,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+        categories,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
+        rowDescription,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
+';
+
 if ($extensionConfiguration['gallerycontentEnablePagination']) {
     $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = str_replace(
         ';gallerycontentZoom,',
@@ -130,6 +147,7 @@ if ($extensionConfiguration['gallerycontentEnablePagination']) {
         $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem']
     );
 }
+
 $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['columnsOverrides'] = array(
     'assets' => [
         'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
