@@ -33,16 +33,18 @@
 			</div>
 		</f:if>
 		<script type="text/javascript">
-			setSpaceHeight('gallerycontent-{data.uid}');
-			window.addEventListener('resize', function(event){
-			  setSpaceHeight('gallerycontent-{data.uid}');
-			});
+            document.addEventListener("DOMContentLoaded", function() {
+    			setGallerycontentSpaceHeight('gallerycontent-<f:format.raw>{data.uid}</f:format.raw>');
+    			window.addEventListener('resize', function(event){
+    			  setGallerycontentSpaceHeight('gallerycontent-<f:format.raw>{data.uid}</f:format.raw>');
+    			});
+            });
 		</script>
 	</f:section>
     <f:section name="FooterAssets">
         <script>
-            function setSpaceHeight(dataUid) {
-              var gallerycontent = document.getElementById("gallerycontent-" + {data.uid});
+            function setGallerycontentSpaceHeight(a) {
+              var gallerycontent = document.getElementById(a);
               var firstSpace = gallerycontent.querySelector(".space");
               var width = firstSpace.getBoundingClientRect().width;
               var spaceElement = gallerycontent.querySelectorAll('.space');
