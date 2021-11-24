@@ -1,30 +1,28 @@
 {
-  "name": "t3brightside/gallerycontent",
-  "description": "TYPO3 CMS extension to create gallery content element with preset crop ratios and pagination",
-  "type": "typo3-cms-extension",
-  "keywords": ["TYPO3", "extension", "images", "gallery", "content"],
-  "license": "GPL-2.0-or-later",
-  "homepage": "https://t3brightside.com",
-  "authors": [
-      {
-          "name": "Tanel Põld",
-          "role": "Developer",
-          "homepage": "https://t3brightside.com"
-      }
-  ],
-  "require": {
-    "typo3/cms-core": "^11.5",
-    "typo3/cms-fluid-styled-content": "^11.5",
-    "t3brightside/paginatedprocessors": "^1.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Brightside\\Gallerycontent\\": "Classes"
-    }
-  },
-  "extra": {
-    "typo3/cms": {
-      "extension-key": "gallerycontent"
-    }
-  }
+	"name": "t3brightside/gallerycontent",
+	"description": "TYPO3 CMS extension to create gallery content element with preset crop ratios and pagination",
+	"type": "typo3-cms-extension",
+	"keywords": ["TYPO3", "extension", "images", "gallery", "content"],
+	"license": "GPL-2.0-or-later",
+	"homepage": "https://t3brightside.com",
+	"authors": [{
+		"name": "Tanel Põld",
+		"role": "Developer",
+		"homepage": "https://t3brightside.com"
+	}],
+	"require": {
+		"typo3/cms-core": "^11.5",
+		"typo3/cms-fluid-styled-content": "^11.5",
+		"t3brightside/paginatedprocessors": "^1.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Brightside\\Gallerycontent\\": "Classes"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "gallerycontent"
+		}
+	}
 }

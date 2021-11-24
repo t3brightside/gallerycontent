@@ -1,44 +1,43 @@
 
 mod.wizards.newContentElement.wizardItems.common {
-   elements {
-      brightsidegallery {
-         iconIdentifier = mimetypes-x-content-gallerycontent
-         title = Gallery
-         description = Image gallery content element
-         tt_content_defValues {
-            CType = gallerycontent
-         }
+  elements {
+    brightsidegallery {
+      iconIdentifier = mimetypes-x-content-gallerycontent
+      title = Gallery
+      description = Image gallery content element
+      tt_content_defValues {
+        CType = gallerycontent
       }
-   }
-   show := addToList(brightsidegallery)
+    }
+  }
+  show := addToList(brightsidegallery)
 }
 
 TCEFORM.tt_content.tx_gallerycontent_template.addItems {
-	0 = Default
-	2 = Style Two
+  0 = Default
 }
 
 
 TCEFORM.tt_content.tx_gallerycontent_cropratio.addItems {
-	default = Default
-    tv = TV (4:3)
-    widescreen = Widescreen (16:9)
-    anamorphic = Anamorphic (2.39:1)
-	square = Square (1:1)
-    portrait = Portrait (3:4)
-    tower = Tower (9:16)
-    skyscraper = Skyscraper (1:2.39)
-    none = None
+  default = Default
+  tv = TV (4:3)
+  widescreen = Widescreen (16:9)
+  anamorphic = Anamorphic (2.39:1)
+  square = Square (1:1)
+  portrait = Portrait (3:4)
+  tower = Tower (9:16)
+  skyscraper = Skyscraper (1:2.39)
+  none = None
 }
 
 TCEFORM.tt_content.tx_gallerycontent_cropratiozoom.addItems {
-    default = Default
-    tv = TV (4:3)
-    widescreen = Widescreen (16:9)
-    anamorphic = Anamorphic (2.39:1)
-	square = Square (1:1)
-    portrait = Portrait (3:4)
-    tower = Tower (9:16)
-    skyscraper = Skyscraper (1:2.39)
-    none = None
+  default = Default
+  tv = TV (4:3)
+  widescreen = Widescreen (16:9)
+  anamorphic = Anamorphic (2.39:1)
+  square = Square (1:1)
+  portrait = Portrait (3:4)
+  tower = Tower (9:16)
+  skyscraper = Skyscraper (1:2.39)
+  none = None
 }

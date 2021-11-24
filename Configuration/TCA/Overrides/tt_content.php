@@ -1,56 +1,62 @@
 <?php
-  defined('TYPO3_MODE') || die('Access denied.');
 
-  call_user_func(function () {
-      $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gallerycontent'] =  'mimetypes-x-content-gallerycontent';
+defined('TYPO3_MODE') || die('Access denied.');
 
-      \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
-      "tt_content",
-      "CType",
-      [
+$GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gallerycontent'] =  'mimetypes-x-content-gallerycontent';
+
+// Get extension configuration
+$extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
+    \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+);
+$extensionConfiguration = $extensionConfiguration->get('gallerycontent');
+
+// Add to content type dropdown
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+    "tt_content",
+    "CType",
+    [
         "Gallery",
         "gallerycontent",
         "mimetypes-x-content-gallerycontent"
-      ],
-      'textmedia',
-      'after'
-      );
+    ],
+    'textmedia',
+    'after'
+);
 
-
-    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_template'] = [
+$tempColumns = array(
+    'tx_gallerycontent_template' => [
         'exclude' => 1,
         'label'   => 'Template',
-        'config'  => array(
+        'config'  => [
             'type'     => 'select',
             'renderType' => 'selectSingle',
             'default' => 0,
             'items'    => array(), /* items set in page TsConfig */
-        ),
-    ];
-
-    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_cropratio'] = [
+        ],
+    ],
+    'tx_gallerycontent_cropratio' => [
         'exclude' => 1,
         'label'   => 'Crop',
-        'config'  => array(
+        'config'  => [
             'type'     => 'select',
             'renderType' => 'selectSingle',
             'default' => 'default',
             'items'    => array(), /* items set in page TsConfig */
-        ),
-    ];
-    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_cropratiozoom'] = [
+        ],
+    ],
+    'tx_gallerycontent_cropratiozoom' => [
         'exclude' => 1,
         'label'   => 'Crop',
-        'config'  => array(
+        'config'  => [
             'type'     => 'select',
             'renderType' => 'selectSingle',
             'default' => 'default',
             'items'    => array(), /* items set in page TsConfig */
-        ),
-    ];
-    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_showtitle'] = [
+        ],
+    ],
+    'tx_gallerycontent_showtitle' => [
         'exclude' => 1,
-        'label' => 'Show titles',
+        'label' => 'Title',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
@@ -61,10 +67,10 @@
                 ]
             ],
         ]
-    ];
-    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_showdesc'] = [
+    ],
+    'tx_gallerycontent_showdesc' => [
         'exclude' => 1,
-        'label' => 'Show descriptions',
+        'label' => 'Description',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
@@ -75,10 +81,10 @@
                 ]
             ],
         ]
-    ];
-    $GLOBALS['TCA']['tt_content']['columns']['tx_paginatedprocessors_paginationenabled'] = [
+    ],
+    'tx_gallerycontent_showtitlezoom' => [
         'exclude' => 1,
-        'label' => 'Pagination',
+        'label' => 'Title',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
@@ -89,19 +95,10 @@
                 ]
             ],
         ]
-    ];
-    $GLOBALS['TCA']['tt_content']['columns']['tx_paginatedprocessors_itemsperpage'] = [
+    ],
+    'tx_gallerycontent_showdesczoom' => [
         'exclude' => 1,
-        'label' => 'Items per page',
-        'config' => array(
-            'type' => 'input',
-            'eval' => 'num,trim',
-            'size' => '1',
-        ),
-    ];
-    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_showtitlezoom'] = [
-        'exclude' => 1,
-        'label' => 'Show title',
+        'label' => 'Description',
         'config' => [
             'type' => 'check',
             'renderType' => 'checkboxToggle',
@@ -112,59 +109,41 @@
                 ]
             ],
         ]
-    ];
-    $GLOBALS['TCA']['tt_content']['columns']['tx_gallerycontent_showdesczoom'] = [
-        'exclude' => 1,
-        'label' => 'Show description',
-        'config' => [
-            'type' => 'check',
-            'renderType' => 'checkboxToggle',
-            'items' => [
-                [
-                    0 => '',
-                    1 => '',
-                ]
-            ],
-        ]
-    ];
+    ],
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
 
-    // Configure the default backend fields for the gallery content element
-    $GLOBALS['TCA']['tt_content']['types']['gallerycontent'] = array(
-       'showitem' => '
-             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.general;general,
-             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xml:palette.header;header,
-             --palette--;Images;gallerycontentSettings,
-             --palette--;Click enlarge;gallerycontentZoomSettings,assets,
-             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
-               --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
-               --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.appearanceLinks;appearanceLinks,
-             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.accessibility,
-               --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.menu_accessibility;menu_accessibility,
-             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
-               --palette--;;language,
-             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access,
-               --palette--;;hidden,
-               --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
-               categories,
-             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:notes,
-               rowDescription,
-             --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
-             --div--;LLL:EXT:gridelements/Resources/Private/Language/locallang_db.xlf:gridElements, tx_gridelements_container, tx_gridelements_columns
-    ',
-    'columnsOverrides' => [
-        'assets' => [
-            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-                'assets',
-                [
-                    'behaviour' => [
-                        'allowLanguageSynchronization' => true,
-                    ],
-                    // custom configuration for displaying fields in the overlay/reference table
-                    // to use the image overlay palette instead of the basic overlay palette
-                    'overrideChildTca' => [
-                        'columns' => [
-                            'crop' => [
+// Configure the default backend fields for the gallery content element
+$GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = $GLOBALS['TCA']['tt_content']['types']['header']['showitem'];
+$GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = str_replace(
+    ';headers,',
+    ';header,
+    --palette--;Images;gallerycontentImages,
+    --div--;Layout;,--palette--;Layout;gallerycontentLayout,
+    --palette--;Click Enlarge;gallerycontentZoom,',
+    $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem']
+);
+if ($extensionConfiguration['gallerycontentEnablePagination']) {
+    $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = str_replace(
+        ';gallerycontentZoom,',
+        ';gallerycontentZoom,
+		--palette--;Pagination;paginatedprocessors,',
+        $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem']
+    );
+}
+$GLOBALS['TCA']['tt_content']['types']['gallerycontent']['columnsOverrides'] = array(
+    'assets' => [
+        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+            'assets',
+            [
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
+                ],
+                // custom configuration for displaying fields in the overlay/reference table
+                // to use the image overlay palette instead of the basic overlay palette
+                'overrideChildTca' => [
+                    'columns' => [
+                        'crop' => [
                             'config' => [
                                 'cropVariants' => [
 
@@ -274,20 +253,27 @@
                             ],
                         ],
                     ],
-                    ],
                 ],
-                'jpg,jpeg,png,svg,pdf,ai,tiff,bmp,gif'
-            ),
             ],
-        ]);
+            $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+        ),
+    ],
+);
+$GLOBALS['TCA']['tt_content']['palettes']['gallerycontentImages']['showitem'] = '
+    assets,
+';
 
-    $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentSettings']['showitem'] = '
-        tx_gallerycontent_template,imagecols,tx_gallerycontent_cropratio,
-        tx_gallerycontent_showtitle,tx_gallerycontent_showdesc,
-        tx_paginatedprocessors_paginationenabled,tx_paginatedprocessors_itemsperpage,
-    ';
-    $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentZoomSettings']['showitem'] = '
-        image_zoom,tx_gallerycontent_cropratiozoom,tx_gallerycontent_showtitlezoom,tx_gallerycontent_showdesczoom,
-    ';
-
-});
+$GLOBALS['TCA']['tt_content']['palettes']['gallerycontentLayout']['showitem'] = '
+    tx_gallerycontent_template,
+    --linebreak--,
+    imagecols,
+    tx_gallerycontent_cropratio,
+    tx_gallerycontent_showtitle,
+    tx_gallerycontent_showdesc,
+';
+$GLOBALS['TCA']['tt_content']['palettes']['gallerycontentZoom']['showitem'] = '
+    image_zoom,
+    tx_gallerycontent_cropratiozoom,
+    tx_gallerycontent_showtitlezoom,
+    tx_gallerycontent_showdesczoom,
+';

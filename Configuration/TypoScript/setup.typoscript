@@ -11,35 +11,39 @@ lib.gallerycontent.layoutRootPaths.30 = {$styles.templates.layoutRootPath}
 
 tt_content.gallerycontent =< lib.gallerycontent
 tt_content.gallerycontent {
-    templateName = Gallerycontent
-    dataProcessing {
-        10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
-        10 {
-            pagination {
-              uniqueId.field = uid
-              isActive.field = tx_paginatedprocessors_paginationenabled
-              itemsPerPage.field = tx_paginatedprocessors_itemsperpage
-            }
-            references.fieldName = assets
-            as = assets
-        }
+  templateName = Gallerycontent
+  dataProcessing {
+    10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
+    10 {
+      pagination {
+        isActive.field = tx_paginatedprocessors_paginationenabled
+        uniqueId.field = uid
+        uniqueId.override.field = tx_paginatedprocessors_urlsegment
+        itemsPerPage = tx_paginatedprocessors_itemsperpage
+        itemsPerPage.field = tx_paginatedprocessors_itemsperpage
+        pageLinksShown = 5
+        pageLinksShown.override.field = tx_paginatedprocessors_pagelinksshown
+      }
+      references.fieldName = assets
+      as = assets
     }
-    settings {
-        imageWidth = {$gallerycontent.imageWidth}
-        imagePadding = {$gallerycontent.imagePadding}
-        zoomMaxWidth = {$gallerycontent.zoomMaxWidth}
-        zoomMaxHeight = {$gallerycontent.zoomMaxHeight}
-        paginationLinks = {$gallerycontent.paginationLinks}
-        lightboxClass = {$gallerycontent.lightboxClass}
-    }
-    extbase {
-        controllerName = Gallerycontent
-        controllerActionName = gallerycontent
-        controllerExtensionName = Gallerycontent
-        pluginName = Gallerycontent
-    }
-    stdWrap {
-        editIcons = tt_content: header [header_layout], tt_content
-        editIcons.iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.menu
-    }
+  }
+  settings {
+    imageWidth = {$gallerycontent.imageWidth}
+    imagePadding = {$gallerycontent.imagePadding}
+    zoomMaxWidth = {$gallerycontent.zoomMaxWidth}
+    zoomMaxHeight = {$gallerycontent.zoomMaxHeight}
+    paginationLinks = {$gallerycontent.paginationLinks}
+    lightboxClass = {$gallerycontent.lightboxClass}
+  }
+  extbase {
+    controllerName = Gallerycontent
+    controllerActionName = gallerycontent
+    controllerExtensionName = Gallerycontent
+    pluginName = Gallerycontent
+  }
+  stdWrap {
+    editIcons = tt_content: header [header_layout], tt_content
+    editIcons.iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.menu
+  }
 }
