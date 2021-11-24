@@ -23,3 +23,5 @@
 	– Move gallery settings to a separate tab "Gallery"
     – Option to turn pagination off in extension configuration
     – Add pagination link control and URL segment
+* 1.1.1
+    – Row space height JS fix
