@@ -113,13 +113,12 @@ $tempColumns = array(
 );
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
 
-// Configure the default backend fields for the gallery content element
 $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = $GLOBALS['TCA']['tt_content']['types']['header']['showitem'];
 $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = str_replace(
     ';headers,',
     ';header,
     --palette--;Images;gallerycontentImages,
-    --div--;Layout;,--palette--;Layout;gallerycontentLayout,
+    --div--;Gallery;,--palette--;Layout;gallerycontentLayout,
     --palette--;Click Enlarge;gallerycontentZoom,',
     $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem']
 );
@@ -139,14 +138,11 @@ $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['columnsOverrides'] = a
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-                // custom configuration for displaying fields in the overlay/reference table
-                // to use the image overlay palette instead of the basic overlay palette
                 'overrideChildTca' => [
                     'columns' => [
                         'crop' => [
                             'config' => [
                                 'cropVariants' => [
-
                                     'default' => [
                                         'title' => 'LLL:EXT:core/Resources/Private/Language/locallang_wizards.xlf:imwizard.crop_variant.default',
                                         'allowedAspectRatios' => [
