@@ -14,6 +14,8 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 ## Features
 - Automatic image optimisation
 - Predefined aspect ratios for images and click-enlarge
+- Set number of columns
+- Control showing titles and descriptions
 - Enable/disable image title and description
 - Pagination control
 
