@@ -32,26 +32,5 @@
 				</f:if>
 			</div>
 		</f:if>
-		<script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", function() {
-    			setGallerycontentSpaceHeight('gallerycontent-<f:format.raw>{data.uid}</f:format.raw>');
-    			window.addEventListener('resize', function(event){
-    			  setGallerycontentSpaceHeight('gallerycontent-<f:format.raw>{data.uid}</f:format.raw>');
-    			});
-            });
-		</script>
 	</f:section>
-    <f:section name="FooterAssets">
-        <script>
-            function setGallerycontentSpaceHeight(a) {
-              var gallerycontent = document.getElementById(a);
-              var firstSpace = gallerycontent.querySelector(".space");
-              var width = firstSpace.getBoundingClientRect().width;
-              var spaceElement = gallerycontent.querySelectorAll('.space');
-              for(var i=0;i<spaceElement.length;i++){
-                spaceElement[i].style.height = width+"px";
-              }
-            }
-        </script>
-    </f:section>
 </html>

@@ -14,17 +14,12 @@
     display: block;
 }
 
-.gallerycontent>.item {
+.gallerycontent>.item, .gallerycontent>.space {
     float: left;
 }
 
 .gallerycontent>.item a:hover {
     text-decoration: none;
-}
-
-.gallerycontent>.space {
-    float: left;
-    min-height: 1px;
 }
 
 .gallerycontent>.item figcaption {
