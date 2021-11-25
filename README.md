@@ -25,7 +25,7 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 - paginatedprocessors
 
 ## Install
-- **composer req t3brightside/gallerycontent** or from TYPO3 extension repository **[gallerycontent](https://extensions.typo3.org/extension/gallerycontent/)**
+- `composer req t3brightside/gallerycontent` or from TYPO3 extension repository **[gallerycontent](https://extensions.typo3.org/extension/gallerycontent/)**
 - Include static template
 - Include static template for Paginatedprocessors
 
