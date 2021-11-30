@@ -23,6 +23,9 @@ tt_content.gallerycontent {
         itemsPerPage.field = tx_paginatedprocessors_itemsperpage
         pageLinksShown = 5
         pageLinksShown.override.field = tx_paginatedprocessors_pagelinksshown
+        anchorActive.field = tx_paginatedprocessors_anchor
+        anchorId.field = uid
+        anchorId.override.field = tx_paginatedprocessors_anchorid
       }
       references.fieldName = assets
       as = assets

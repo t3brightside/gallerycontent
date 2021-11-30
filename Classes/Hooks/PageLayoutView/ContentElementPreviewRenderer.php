@@ -57,6 +57,12 @@ class ContentElementPreviewRenderer implements PageLayoutViewDrawItemHookInterfa
             if ($row['tx_paginatedprocessors_urlsegment'] && $row['tx_paginatedprocessors_paginationenabled'] == 1) {
                 $itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('URL segment: ' . $row['tx_paginatedprocessors_urlsegment']), $row) . '</li>';
             }
+            if ($row['tx_paginatedprocessors_anchor'] && $row['tx_paginatedprocessors_paginationenabled'] == 1) {
+                $itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Anchor: yes'), $row) . '</li>';
+            }
+            if ($row['tx_paginatedprocessors_anchor'] && $row['tx_paginatedprocessors_anchorid'] && $row['tx_paginatedprocessors_paginationenabled'] == 1) {
+                $itemContent .= '<li>' . $parentObject->linkEditContent($parentObject->renderText('Custom Anchor: ' . $row['tx_paginatedprocessors_anchorid']), $row) . '</li>';
+            }
 			$itemContent .= '</ul>';
 			$drawItem = FALSE;
 		}
