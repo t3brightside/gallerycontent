@@ -25,3 +25,7 @@
     – Add pagination link control and URL segment
 * 1.1.1
     – Row space height JS fix
+* 1.2.0
+    - TCA clean up and improvement
+    - Row space JS removal in favour of CSS
+    - Pagination link anchor options
