@@ -140,7 +140,7 @@ if ($extensionConfiguration['gallerycontentEnablePagination']) {
     $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = str_replace(
         ';gallerycontentZoom,',
         ';gallerycontentZoom,
-		--palette--;Pagination;paginatedprocessors,',
+		--palette--;LLL:EXT:paginatedprocessors/Resources/Private/Language/locallang_tca.xlf:palettes.pagination;paginatedprocessors,',
         $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem']
     );
 }
