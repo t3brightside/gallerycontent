@@ -1,2 +1,5 @@
 # cat=basic/enable; type=options[Disabled=0,Enabled=1]; label=Pagination
 gallerycontentEnablePagination = 1
+
+# cat=basic/enable; type=options[Disabled=0,Enabled=1]; label=Replace media section in Textmedia with Galleryitem
+gallerycontentReplaceTextmediaMedia = 0

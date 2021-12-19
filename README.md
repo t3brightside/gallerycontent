@@ -18,6 +18,7 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 - Control showing titles and descriptions
 - Enable/disable image title and description
 - Pagination control
+- Replace media part in 'Textmedia' with Gallery
 
 ## System requirements
 - TYPO3
@@ -28,6 +29,7 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 - `composer req t3brightside/gallerycontent` or from TYPO3 extension repository **[gallerycontent](https://extensions.typo3.org/extension/gallerycontent/)**
 - Include static template
 - Include static template for Paginatedprocessors
+- Configure extension config and TypoScript constants
 
 ## Sources
 - [GitHub](https://github.com/t3brightside/gallerycontent)

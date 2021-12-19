@@ -288,3 +288,56 @@ $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentZoom']['showitem'] = '
     tx_gallerycontent_showtitlezoom,
     tx_gallerycontent_showdesczoom,
 ';
+
+
+// $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem'] = $GLOBALS['TCA']['pages']['types'][1]['showitem'];
+
+// Replace textmedia media section with callerycontent
+if ($extensionConfiguration['gallerycontentReplaceTextmediaMedia']) {
+
+    $GLOBALS['TCA']['tt_content']['types']['textmedia']['columnsOverrides']['assets'] = $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['columnsOverrides']['assets'];
+
+    $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem'] = str_replace(
+        'assets,',
+        '',
+        $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem']
+    );
+    $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem'] = str_replace(
+        '--palette--;;gallerySettings,',
+        '',
+        $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem']
+    );
+    $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem'] = str_replace(
+        '--palette--;;imagelinks,',
+        '',
+        $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem']
+    );
+    $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem'] = str_replace(
+        '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.media,',
+        '',
+        $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem']
+    );
+    $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem'] = str_replace(
+        '--palette--;;mediaAdjustments,',
+        '--palette--;Images;gallerycontentImages,
+            --div--;Gallery;,
+            --palette--;Placement and Size;galleryPlaceAndSize,
+            --palette--;Layout;gallerycontentLayout,
+            --palette--;Click Enlarge;gallerycontentZoom,
+        ',
+        $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem']
+    );
+    if ($extensionConfiguration['gallerycontentEnablePagination']) {
+        $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem'] = str_replace(
+            ';gallerycontentZoom,',
+            ';gallerycontentZoom,
+    		--palette--;LLL:EXT:paginatedprocessors/Resources/Private/Language/locallang_tca.xlf:palettes.pagination;paginatedprocessors,',
+            $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem']
+        );
+    }
+
+    $GLOBALS['TCA']['tt_content']['palettes']['galleryPlaceAndSize']['showitem'] = '
+        imageorient;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:imageorient_formlabel,
+        imagewidth;Gallery Width In Percentage,
+    ';
+}
