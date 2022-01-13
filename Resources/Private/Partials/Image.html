@@ -6,4 +6,5 @@
     alt="{f:if(condition:'{asset.properties.alternative}', then:'{asset.properties.alternative -> f:format.stripTags()}', else:'{asset.properties.title -> f:format.stripTags()}')}"
     additionalAttributes="{srcset: '{f:uri.image(image:\'{asset}\', cropVariant:\'{data.tx_gallerycontent_cropratio}\', width:\'{imageWidth_x2}\')}  2x'}"
     title="{asset.properties.title -> f:format.stripTags()}"
+    loading="lazy"
 />
