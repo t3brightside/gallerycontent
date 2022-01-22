@@ -38,12 +38,6 @@ tt_content.gallerycontent {
     paginationLinks = {$gallerycontent.paginationLinks}
     lightboxClass = {$gallerycontent.lightboxClass}
   }
-  extbase {
-    controllerName = Gallerycontent
-    controllerActionName = gallerycontent
-    controllerExtensionName = Gallerycontent
-    pluginName = Gallerycontent
-  }
   stdWrap {
     editIcons = tt_content: header [header_layout], tt_content
     editIcons.iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.menu
