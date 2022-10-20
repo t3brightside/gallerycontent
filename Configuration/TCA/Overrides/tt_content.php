@@ -1,17 +1,22 @@
 <?php
 
-defined('TYPO3_MODE') || die('Access denied.');
+defined('TYPO3_MODE') || defined('TYPO3') || die('Access denied.');
+
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use Brightside\Gallerycontent\Preview\GallerycontentPreviewRenderer;
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gallerycontent'] =  'mimetypes-x-content-gallerycontent';
 
 // Get extension configuration
-$extensionConfiguration = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(
-    \TYPO3\CMS\Core\Configuration\ExtensionConfiguration::class
+$extensionConfiguration = GeneralUtility::makeInstance(
+    ExtensionConfiguration::class
 );
 $extensionConfiguration = $extensionConfiguration->get('gallerycontent');
 
 // Add to content type dropdown
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItem(
+ExtensionManagementUtility::addTcaSelectItem(
     "tt_content",
     "CType",
     [
@@ -111,8 +116,9 @@ $tempColumns = array(
         ]
     ],
 );
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
+ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
 
+$GLOBALS['TCA']['tt_content']['types']['gallerycontent']['previewRenderer'] = GallerycontentPreviewRenderer::class;
 
 $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -144,10 +150,9 @@ if ($extensionConfiguration['gallerycontentEnablePagination']) {
         $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem']
     );
 }
-
 $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['columnsOverrides'] = array(
     'assets' => [
-        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+        'config' => ExtensionManagementUtility::getFileFieldTCAConfig(
             'assets',
             [
                 'behaviour' => [
@@ -270,6 +275,7 @@ $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['columnsOverrides'] = a
         ),
     ],
 );
+
 $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentImages']['showitem'] = '
     assets,
 ';

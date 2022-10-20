@@ -34,3 +34,5 @@
     - [FEATURE] Browser native lazy loading for images
     - [TASK] Remove extbase TS settings that are not needed any more
     – [TASK] Remove extbase TS settings that are not needed any more
+* 1.4.0
+    - [TASK] TYPO3 12 compatibility

@@ -1,19 +1,32 @@
 <?php
-	\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('@import "EXT:gallerycontent/Configuration/PageTS/setup.typoscript"');
+defined('TYPO3_MODE') || defined('TYPO3') || die('Access denied.');
 
-	$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-	$iconRegistry->registerIcon(
-		'mimetypes-x-content-gallerycontent',
-		\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-		['source' => 'EXT:gallerycontent/Resources/Public/Icons/mimetypes-x-content-gallerycontent.svg']
-	);
+use TYPO3\CMS\Core\Information\Typo3Version;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Imaging\IconRegistry;
 
-	$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['cms/layout/class.tx_cms_layout.php']['tt_content_drawItem']['gallerycontent'] = \Brightside\Gallerycontent\Hooks\PageLayoutView\ContentElementPreviewRenderer::class;
+$versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
+// Only include page.tsconfig if TYPO3 version is below 12 so that it is not imported twice.
+if ($versionInformation->getMajorVersion() < 12) {
+   ExtensionManagementUtility::addPageTSConfig('
+      @import "EXT:gallerycontent/Configuration/page.tsconfig"
+   ');
+}
 
-	\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-		'gallerycontent',
-		'Gallerycontent',
-		[
-			'Gallerycontent' => 'gallerycontent'
-		]
-	);
+$iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
+$iconRegistry->registerIcon(
+	'mimetypes-x-content-gallerycontent',
+	\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+	['source' => 'EXT:gallerycontent/Resources/Public/Icons/mimetypes-x-content-gallerycontent.svg']
+);
+
+
+ExtensionUtility::configurePlugin(
+	'gallerycontent',
+	'Gallerycontent',
+	[
+		'Gallerycontent' => 'gallerycontent'
+	]
+);
