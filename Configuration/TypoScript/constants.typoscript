@@ -1,5 +1,3 @@
-# cat=Gallerycontent/gallerycontent; type=string; label= Styles file
-	gallerycontent.styles = EXT:gallerycontent/Resources/Public/Styles/gallerycontent.css
 # cat=Gallerycontent/gallerycontent; type=string; label= Templates root paht
 	gallerycontent.templateRootPath = EXT:gallerycontent/Resources/Private/Templates/
 # cat=Gallerycontent/gallerycontent; type=string; label= Partials root paht

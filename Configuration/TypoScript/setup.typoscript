@@ -37,8 +37,6 @@ tt_content.gallerycontent {
     paginationLinks = {$gallerycontent.paginationLinks}
     lightboxClass = {$gallerycontent.lightboxClass}
     enableLightbox = {$gallerycontent.enableLightbox}
-    defaultStyles = {$gallerycontent.styles}
-
   }
   stdWrap {
     editIcons = tt_content: header [header_layout], tt_content
@@ -80,6 +78,5 @@ tt_content.textmedia {
       paginationLinks = {$gallerycontent.paginationLinks}
       lightboxClass = {$gallerycontent.lightboxClass}
       enableLightbox = {$gallerycontent.enableLightbox}
-      defaultStyles = {$gallerycontent.styles}
     }
 }

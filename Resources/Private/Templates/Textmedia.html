@@ -7,10 +7,7 @@
         </f:if>
     </f:section>
     <f:section name="Main">
-        <f:asset.css identifier="styles" href="{settings.defaultStyles}" />
-        <f:if condition="{data.image_zoom} && {settings.enableLightbox}">
-            <f:asset.css identifier="simpleLightbox" href="EXT:gallerycontent/Resources/Public/Styles/simple-lightbox.min.css" />
-        </f:if>
+        <f:render partial="Styles" arguments="{_all}" />
         <f:variable name="imageCount"><f:count subject="{assets}" /></f:variable>
         <f:if condition="{imageCount} < {data.imagecols}">
             <f:then><f:variable name="colCount">{imageCount}</f:variable></f:then>
