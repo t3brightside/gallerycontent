@@ -19,7 +19,7 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 - Enable/disable image title and description
 - Pagination control
 - Replace media part in 'Textmedia' with Gallery
-– Integrated [SimpleLightbox](https://github.com/andreknieriem/simplelightbox)
+- Integrated [SimpleLightbox](https://github.com/andreknieriem/simplelightbox)
 
 ## System requirements
 - TYPO3
