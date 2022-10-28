@@ -1,4 +1,3 @@
-page.includeCSS.gallerycontent = {$gallerycontent.styles}
 lib.gallerycontent =< lib.contentElement
 lib.gallerycontent.templateRootPaths.10 = EXT:gallerycontent/Resources/Private/Templates/
 lib.gallerycontent.templateRootPaths.20 = {$gallerycontent.templateRootPath}
@@ -37,6 +36,9 @@ tt_content.gallerycontent {
     zoomMaxHeight = {$gallerycontent.zoomMaxHeight}
     paginationLinks = {$gallerycontent.paginationLinks}
     lightboxClass = {$gallerycontent.lightboxClass}
+    enableLightbox = {$gallerycontent.enableLightbox}
+    defaultStyles = {$gallerycontent.styles}
+
   }
   stdWrap {
     editIcons = tt_content: header [header_layout], tt_content
@@ -77,5 +79,7 @@ tt_content.textmedia {
       zoomMaxHeight = {$gallerycontent.zoomMaxHeight}
       paginationLinks = {$gallerycontent.paginationLinks}
       lightboxClass = {$gallerycontent.lightboxClass}
+      enableLightbox = {$gallerycontent.enableLightbox}
+      defaultStyles = {$gallerycontent.styles}
     }
 }

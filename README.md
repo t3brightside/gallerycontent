@@ -19,6 +19,7 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 - Enable/disable image title and description
 - Pagination control
 - Replace media part in 'Textmedia' with Gallery
+– Integrated [SimpleLightbox](https://github.com/andreknieriem/simplelightbox)
 
 ## System requirements
 - TYPO3
@@ -29,7 +30,8 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 - `composer req t3brightside/gallerycontent` or from TYPO3 extension repository **[gallerycontent](https://extensions.typo3.org/extension/gallerycontent/)**
 - Include static template
 - Include static template for Paginatedprocessors
-- Configure extension config and TypoScript constants
+- Configure extension config to enable gallery to replace image part in textmedia
+- Set TypoScript constants
 
 ## Sources
 - [GitHub](https://github.com/t3brightside/gallerycontent)

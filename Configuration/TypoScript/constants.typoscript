@@ -16,3 +16,5 @@
 	gallerycontent.paginationLinks = 6
 # cat=Gallerycontent/gallerycontent; type=string; label= Lightbox link class
 	gallerycontent.lightboxClass = lightbox
+# cat=Gallerycontent/gallerycontent; type=string; label= Enable integrated lightbox
+  gallerycontent.enableLightbox = 0

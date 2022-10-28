@@ -13,7 +13,8 @@
                         <a
                             href="{f:uri.image(image:'{asset}', maxWidth:'{settings.zoomMaxWidth}', maxHeight:'{settings.zoomMaxHeight}', cropVariant:'{data.tx_gallerycontent_cropratiozoom}')}"
                             class="{settings.lightboxClass}"
-                            title="{f:if(condition: '{data.tx_gallerycontent_showtitlezoom}', then: '{asset.properties.title}')}{f:if(condition: '{asset.properties.title} && {asset.properties.description} && {data.tx_gallerycontent_showtitlezoom} && {data.tx_gallerycontent_showdesczoom}', then: '<br />')} {f:if(condition: '{data.tx_gallerycontent_showdesczoom}', then: '{asset.properties.description}')}"
+                            title="Zoom {f:if(condition: '{data.tx_gallerycontent_showtitlezoom}', then: '{asset.properties.title}')}{f:if(condition: '{asset.properties.title} && {asset.properties.description} && {data.tx_gallerycontent_showtitlezoom} && {data.tx_gallerycontent_showdesczoom}', then: '<br />')} {f:if(condition: '{data.tx_gallerycontent_showdesczoom}', then: '{asset.properties.description}')}"
+                            rel="lightbox-{data.uid}"
                         >
                             <f:render partial="Image" arguments="{_all}" />
                         </a>

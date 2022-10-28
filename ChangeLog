@@ -36,3 +36,6 @@
     – [TASK] Remove extbase TS settings that are not needed any more
 * 1.4.0
     - [TASK] TYPO3 12 compatibility
+* 1.5.0
+    - Load CSS and JS only if the content element is present
+    - [FEATURE] Integrate SimpleLightbox by @andreknieriem https://github.com/andreknieriem/simplelightbox
