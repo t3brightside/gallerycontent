@@ -69,7 +69,7 @@
             </f:if>
         </div>
         <f:if condition="{data.image_zoom} && {settings.enableLightbox}">
-            <f:asset.script identifier="simpleLightbox" src="EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js" />
+            <f:asset.script defer="1" identifier="simpleLightbox" src="EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js" />
         </f:if>
     </f:section>
 </html>
