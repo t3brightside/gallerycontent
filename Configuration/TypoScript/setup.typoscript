@@ -7,7 +7,7 @@ lib.gallerycontent.layoutRootPaths.10 = EXT:fluid_styled_content/Resources/Priva
 lib.gallerycontent.layoutRootPaths.20 = EXT:gallerycontent/Resources/Private/Layouts/
 lib.gallerycontent.layoutRootPaths.30 = {$styles.templates.layoutRootPath}
 
-tt_content.gallerycontent =< lib.gallerycontent
+tt_content.gallerycontent < lib.gallerycontent
 tt_content.gallerycontent {
   templateName = Gallerycontent
   dataProcessing {
@@ -48,7 +48,7 @@ tt_content.gallerycontent {
 lib.contentElement.templateRootPaths.1023 = EXT:gallerycontent/Resources/Private/Templates/
 lib.contentElement.partialRootPaths.1023 = EXT:gallerycontent/Resources/Private/Partials/
 
-tt_content.textmedia =< lib.contentElement
+tt_content.textmedia < lib.contentElement
 tt_content.textmedia {
     templateName = Textmedia
     dataProcessing {
