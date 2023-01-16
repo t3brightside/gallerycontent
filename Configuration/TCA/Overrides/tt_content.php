@@ -282,6 +282,7 @@ $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentImages']['showitem'] = 
 
 $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentLayout']['showitem'] = '
     tx_gallerycontent_template,
+    tx_imagelazyload,
     --linebreak--,
     imagecols,
     tx_gallerycontent_cropratio,
