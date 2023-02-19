@@ -19,7 +19,7 @@ tt_content.gallerycontent {
         uniqueId.override.field = tx_paginatedprocessors_urlsegment
         itemsPerPage = tx_paginatedprocessors_itemsperpage
         itemsPerPage.field = tx_paginatedprocessors_itemsperpage
-        pageLinksShown = 5
+        pageLinksShown = {$gallerycontent.paginationLinks}
         pageLinksShown.override.field = tx_paginatedprocessors_pagelinksshown
         anchorActive.field = tx_paginatedprocessors_anchor
         anchorId.field = uid

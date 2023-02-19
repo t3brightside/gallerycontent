@@ -47,3 +47,4 @@
     - [TASK] Follow coding guidelines for ext_localconf
     - [TASK] Code cleanup
     - [BUGFIX] =< lib.contentElement to textmedia
+    - [TASK] Put default number of pagination links constant in action
