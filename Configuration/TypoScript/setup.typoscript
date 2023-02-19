@@ -48,7 +48,7 @@ tt_content.gallerycontent {
 lib.contentElement.templateRootPaths.1023 = EXT:gallerycontent/Resources/Private/Templates/
 lib.contentElement.partialRootPaths.1023 = EXT:gallerycontent/Resources/Private/Partials/
 
-tt_content.textmedia < lib.contentElement
+tt_content.textmedia =< lib.contentElement
 tt_content.textmedia {
     templateName = Textmedia
     dataProcessing {
