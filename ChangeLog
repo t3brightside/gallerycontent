@@ -43,3 +43,7 @@
     - [TASK] TYPO3 12.1 compatibility
     - [TASK] Insert lib.gallerycontent by < not =<
 	- [FEATURE] Add support for ext:imagelazyload
+* 1.5.2
+    - [TASK] Follow coding guidelines for ext_localconf
+    - [TASK] Code cleanup
+    - [BUGFIX] =< lib.contentElement to textmedia
