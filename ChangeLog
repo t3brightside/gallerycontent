@@ -48,3 +48,6 @@
     - [TASK] Code cleanup
     - [BUGFIX] =< lib.contentElement to textmedia
     - [TASK] Put default number of pagination links constant in action
+* 1.5.3
+    - [TASK] Improve lightbox styles & handling
+    - [BUGFIX] Title and desc control for lightbox
