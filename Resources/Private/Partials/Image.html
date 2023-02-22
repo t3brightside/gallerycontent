@@ -4,7 +4,11 @@
     cropVariant="{data.tx_gallerycontent_cropratio}"
     width="{imageWidth}"
     alt="{f:if(condition:'{asset.properties.alternative}', then:'{asset.properties.alternative -> f:format.stripTags()}', else:'{asset.properties.title -> f:format.stripTags()}')}"
-    additionalAttributes="{srcset: '{f:uri.image(image:\'{asset}\', cropVariant:\'{data.tx_gallerycontent_cropratio}\', width:\'{imageWidth_x2}\')}  2x'}"
-    title="{asset.properties.title -> f:format.stripTags()}"
+    additionalAttributes="{
+        srcset:
+        '{f:uri.image(image:\'{asset}\', cropVariant:\'{data.tx_gallerycontent_cropratio}\', width:\'{imageWidth_x2}\')}  2x',
+        lightbox-title:
+        '{f:if(condition:\'{asset.properties.title} && {data.tx_gallerycontent_showtitlezoom}\', then:\'{asset.properties.title -> f:format.stripTags()}\')}{f:if(condition:\'{asset.properties.title} && {asset.properties.description} && {data.tx_gallerycontent_showdesczoom} && {data.tx_gallerycontent_showtitlezoom}\', then:\'<br />\')}{f:if(condition:\'{asset.properties.description} && {data.tx_gallerycontent_showdesczoom}\', then:\'{asset.properties.description -> f:format.stripTags()}\')}'
+    }"
     loading="{f:if(condition: '!{data.tx_imagelazyload}', then: 'lazy')}"
 />
