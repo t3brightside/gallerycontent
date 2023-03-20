@@ -1,5 +1,5 @@
-
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+{namespace ea=Brightside\Embedassets\ViewHelpers}
     <f:layout name="Default" />
     <f:section name="Header">
         <f:if condition="{gallery.position.noWrap} != 1">
@@ -7,7 +7,12 @@
         </f:if>
     </f:section>
     <f:section name="Main">
-        <f:render partial="Styles" arguments="{_all}" />
+        <f:if condition="{assets}">
+            <ea:asset.css embed="1" priority="{settings.cssPriority}" identifier="gallerycontent" href="{settings.cssFile}" />
+        </f:if>
+        <f:if condition="{data.image_zoom} && {settings.enableLightbox}">
+            <f:asset.css priority="1" identifier="gallerycontentLightbox" href="EXT:gallerycontent/Resources/Public/Css/simple-lightbox.css" media="print" additionalAttributes="{onload: 'this.media=\"all\"'}" />
+        </f:if>
         <f:variable name="imageCount"><f:count subject="{assets}" /></f:variable>
         <f:if condition="{imageCount} < {data.imagecols}">
             <f:then><f:variable name="colCount">{imageCount}</f:variable></f:then>
@@ -68,8 +73,8 @@
                 </f:if>
             </f:if>
         </div>
-        <f:if condition="{data.image_zoom} && {settings.enableLightbox}">
-            <f:asset.script defer="1" identifier="simpleLightbox" src="EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js" />
+        <f:if condition="{assets} &&  {data.image_zoom} && {settings.enableLightbox}">
+            <f:asset.script async="1" identifier="gallerycontentLightbox" src="EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js" />
         </f:if>
     </f:section>
 </html>

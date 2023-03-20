@@ -1,12 +1,13 @@
 lib.gallerycontent =< lib.contentElement
-lib.gallerycontent.templateRootPaths.10 = EXT:gallerycontent/Resources/Private/Templates/
-lib.gallerycontent.templateRootPaths.20 = {$gallerycontent.templateRootPath}
-lib.gallerycontent.partialRootPaths.10 = EXT:gallerycontent/Resources/Private/Partials/
-lib.gallerycontent.partialRootPaths.20 = {$gallerycontent.partialRootPath}
-lib.gallerycontent.layoutRootPaths.10 = EXT:fluid_styled_content/Resources/Private/Layouts/
-lib.gallerycontent.layoutRootPaths.20 = EXT:gallerycontent/Resources/Private/Layouts/
-lib.gallerycontent.layoutRootPaths.30 = {$styles.templates.layoutRootPath}
-
+lib.gallerycontent {
+  templateRootPaths.10 = EXT:gallerycontent/Resources/Private/Templates/
+  templateRootPaths.20 = {$gallerycontent.templateRootPath}
+  partialRootPaths.10 = EXT:gallerycontent/Resources/Private/Partials/
+  partialRootPaths.20 = {$gallerycontent.partialRootPath}
+  layoutRootPaths.10 = EXT:fluid_styled_content/Resources/Private/Layouts/
+  layoutRootPaths.20 = EXT:gallerycontent/Resources/Private/Layouts/
+  layoutRootPaths.30 = {$styles.templates.layoutRootPath}
+}
 tt_content.gallerycontent < lib.gallerycontent
 tt_content.gallerycontent {
   templateName = Gallerycontent
@@ -37,6 +38,8 @@ tt_content.gallerycontent {
     paginationLinks = {$gallerycontent.paginationLinks}
     lightboxClass = {$gallerycontent.lightboxClass}
     enableLightbox = {$gallerycontent.enableLightbox}
+    cssFile = {$gallerycontent.cssFile}
+    cssPriority = {$gallerycontent.cssPriority}
   }
   stdWrap {
     editIcons = tt_content: header [header_layout], tt_content
@@ -78,5 +81,7 @@ tt_content.textmedia {
       paginationLinks = {$gallerycontent.paginationLinks}
       lightboxClass = {$gallerycontent.lightboxClass}
       enableLightbox = {$gallerycontent.enableLightbox}
+      cssFile = {$gallerycontent.cssFile}
+      cssPriority = {$gallerycontent.cssPriority}
     }
 }
