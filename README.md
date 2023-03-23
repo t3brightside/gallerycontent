@@ -18,7 +18,7 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 - Control showing titles and descriptions
 - Enable/disable image title and description
 - Pagination control
-- Replace media part in 'Textmedia' with Gallery
+- Replace media part in 'Textmedia' with Gallery (experimental)
 - Integrated [SimpleLightbox](https://github.com/andreknieriem/simplelightbox)
 
 ## System requirements
@@ -31,6 +31,7 @@ Automatic image optimisation, crop ratios and ready to go dynamic template
 - Include static template
 - Include static template for Paginatedprocessors
 - Configure extension config to enable gallery to replace image part in textmedia
+- Include static template for Text & Media (experimental feature)
 - Set TypoScript constants
 
 ## Sources

@@ -52,3 +52,5 @@
     - [TASK] Improve lightbox styles
     - [BUGFIX] Title and desc control for lightbox
     - [TASK] Load CSS and JS on demand only and non blocking using ext:embedassets
+* 1.7.0
+    - [TASK] Separate Gallerycontent Text & Media TS template
