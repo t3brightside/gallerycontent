@@ -1,3 +1,13 @@
+["{$gallerycontent.forceLightbox}" == "1"]
+  page {
+    includeCSS {
+      gallerycontent = {$gallerycontent.cssFile}
+      gallerycontentLightbox = EXT:gallerycontent/Resources/Public/Css/simple-lightbox.css
+    }
+    includeJSLibs.gallerycontentLightbox = EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js
+  }
+[END]
+
 lib.gallerycontent =< lib.contentElement
 lib.gallerycontent {
   templateRootPaths.10 = EXT:gallerycontent/Resources/Private/Templates/
@@ -38,6 +48,7 @@ tt_content.gallerycontent {
     paginationLinks = {$gallerycontent.paginationLinks}
     lightboxClass = {$gallerycontent.lightboxClass}
     enableLightbox = {$gallerycontent.enableLightbox}
+    forceLightbox = {$gallerycontent.forceLightbox}
     cssFile = {$gallerycontent.cssFile}
     cssPriority = {$gallerycontent.cssPriority}
   }

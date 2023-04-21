@@ -18,5 +18,7 @@
 	gallerycontent.paginationLinks = 6
 # cat=Gallerycontent/gallerycontent; type=string; label= Lightbox link class
 	gallerycontent.lightboxClass = lightbox
-# cat=Gallerycontent/gallerycontent; type=string; label= Enable integrated lightbox
-  gallerycontent.enableLightbox = 0
+# cat=Gallerycontent/gallerycontent; type=boolean; label= Enable integrated lightbox
+  gallerycontent.enableLightbox =
+# cat=Gallerycontent/gallerycontent; type=boolean; label= Force lodaing lightbox even if no gallery on page
+  gallerycontent.forceLightbox =
