@@ -22,5 +22,5 @@
   gallerycontent.enableLightbox =
 # cat=Gallerycontent/gallerycontent; type=boolean; label= Force lodaing lightbox even if no gallery on page
   gallerycontent.forceLightbox =
-# cat=Gallerycontent/gallerycontent; type=boolean; label= Force image file format (make sure it's enabled in [GFX][imagefile_ext])
+# cat=Gallerycontent/gallerycontent; type=string; label= Force image file format (make sure it's enabled in [GFX][imagefile_ext])
   gallerycontent.forceImageFileFormat =
