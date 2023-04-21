@@ -51,6 +51,7 @@ tt_content.gallerycontent {
     forceLightbox = {$gallerycontent.forceLightbox}
     cssFile = {$gallerycontent.cssFile}
     cssPriority = {$gallerycontent.cssPriority}
+    forceImageFileFormat = {$gallerycontent.forceImageFileFormat}
   }
   stdWrap {
     editIcons = tt_content: header [header_layout], tt_content
