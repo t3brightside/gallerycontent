@@ -1,9 +1,6 @@
 ["{$gallerycontent.forceLightbox}" == "1"]
   page {
-    includeCSS {
-      gallerycontent = {$gallerycontent.cssFile}
-      gallerycontentLightbox = EXT:gallerycontent/Resources/Public/Css/simple-lightbox.css
-    }
+    includeCSS.gallerycontentLightbox = EXT:gallerycontent/Resources/Public/Css/simple-lightbox.css
     includeJSLibs.gallerycontentLightbox = EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js
   }
 [END]
