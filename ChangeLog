@@ -58,3 +58,5 @@
     – [BUGFIX] Set constant to string instead of boolean
     – [FEATURE] Force image file format with TS constant
     – [FEATURE] Constant to force CSS and JS loading
+* 1.8.1
+    – [BUGFIX] Do not load gallery CSS on lightbox force
