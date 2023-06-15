@@ -22,5 +22,7 @@
   gallerycontent.enableLightbox =
 # cat=Gallerycontent/gallerycontent; type=boolean; label= Force lodaing lightbox even if no gallery on page
   gallerycontent.forceLightbox =
+# cat=Gallerycontent/gallerycontent; type=boolean; label= Set lightbox default color mode dark
+  gallerycontent.lightboxColorScheme =
 # cat=Gallerycontent/gallerycontent; type=string; label= Force image file format (make sure it's enabled in [GFX][imagefile_ext])
   gallerycontent.forceImageFileFormat =

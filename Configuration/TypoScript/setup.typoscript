@@ -5,6 +5,10 @@
   }
 [END]
 
+[{$gallerycontent.forceLightbox} == 1 && {$gallerycontent.lightboxColorScheme} == 1]
+    page.includeCSS.gallerycontentLightboxDark = EXT:gallerycontent/Resources/Public/Css/dark-default.css
+[END]
+
 lib.gallerycontent =< lib.contentElement
 lib.gallerycontent {
   templateRootPaths.10 = EXT:gallerycontent/Resources/Private/Templates/
@@ -49,6 +53,7 @@ tt_content.gallerycontent {
     cssFile = {$gallerycontent.cssFile}
     cssPriority = {$gallerycontent.cssPriority}
     forceImageFileFormat = {$gallerycontent.forceImageFileFormat}
+    lightboxColorScheme = {$gallerycontent.lightboxColorScheme}
   }
   stdWrap {
     editIcons = tt_content: header [header_layout], tt_content

@@ -4,6 +4,7 @@
 	<f:section name="Main">
         <f:if condition="{assets}">
             <ea:asset.css embed="1" priority="{settings.cssPriority}" identifier="gallerycontent" href="{settings.cssFile}" />
+            <f:if condition="{settings.lightboxColorScheme} == 1"><f:render partial="CssDark.html" /></f:if>
         </f:if>
         <f:if condition="!{settings.forceLightbox}">
             <f:if condition="{data.image_zoom} && {settings.enableLightbox}">
