@@ -60,3 +60,6 @@
     – [FEATURE] Constant to force CSS and JS loading
 * 1.8.1
     – [BUGFIX] Do not load gallery CSS on lightbox force
+* 1.9.0
+    – [FEATURE] Force dark theme lightbox with TS constant if desired
+    - [TASK] Upgrade Simple-Lightbox to v2.14.2
