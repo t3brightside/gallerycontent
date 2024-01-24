@@ -63,3 +63,6 @@
 * 1.9.0
     – [FEATURE] Force dark theme lightbox with TS constant if desired
     - [TASK] Upgrade Simple-Lightbox to v2.14.2
+* 1.9.1
+    - [TASK] improve loading embed CSS on demand
+    - [BUGFIX] remove condition error of loading dark color theme
