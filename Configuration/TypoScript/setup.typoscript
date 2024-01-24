@@ -1,11 +1,11 @@
 ["{$gallerycontent.forceLightbox}" == "1"]
   page {
     includeCSS.gallerycontentLightbox = EXT:gallerycontent/Resources/Public/Css/simple-lightbox.css
-    includeJSLibs.gallerycontentLightbox = EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js
+    includeJSFooterlibs.gallerycontentLightbox = EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js
   }
 [END]
 
-[{$gallerycontent.forceLightbox} == 1 && {$gallerycontent.lightboxColorScheme} == 1]
+["{$gallerycontent.forceLightbox}" == "1" && "{$gallerycontent.lightboxColorScheme}" == "1"]
     page.includeCSS.gallerycontentLightboxDark = EXT:gallerycontent/Resources/Public/Css/dark-default.css
 [END]
 
