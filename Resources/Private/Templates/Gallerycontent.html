@@ -4,11 +4,13 @@
 	<f:section name="Main">
         <f:if condition="{assets}">
             <ea:asset.css embed="1" priority="{settings.cssPriority}" identifier="gallerycontent" href="{settings.cssFile}" />
-            <f:if condition="{settings.lightboxColorScheme} == 1"><f:render partial="CssDark.html" /></f:if>
         </f:if>
         <f:if condition="!{settings.forceLightbox}">
             <f:if condition="{data.image_zoom} && {settings.enableLightbox}">
                 <f:asset.css priority="1" identifier="gallerycontentLightbox" href="EXT:gallerycontent/Resources/Public/Css/simple-lightbox.css" media="print" additionalAttributes="{onload: 'this.media=\"all\"'}" />
+                <f:if condition="{settings.lightboxColorScheme} == 1">
+                    <ea:asset.css embed="1" priority="{settings.cssPriority}" identifier="gallerycontentLightboxDark" href="EXT:gallerycontent/Resources/Public/Css/dark-default.css" />
+                </f:if>
             </f:if>
         </f:if>
         <f:variable name="imageCount"><f:count subject="{assets}" /></f:variable>
