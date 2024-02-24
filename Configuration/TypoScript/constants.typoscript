@@ -2,10 +2,16 @@
 	gallerycontent.templateRootPath = EXT:gallerycontent/Resources/Private/Templates/
 # cat=Gallerycontent/gallerycontent; type=string; label= Partials root paht
 	gallerycontent.partialRootPath = EXT:gallerycontent/Resources/Private/Partials/
-  # cat=Gallerycontent/gallerycontent; type=string; label= Styles file
+# cat=Gallerycontent/gallerycontent; type=string; label= Styles file
 	gallerycontent.cssFile = EXT:gallerycontent/Resources/Public/Css/gallerycontent.css
+# cat=Gallerycontent/gallerycontent; type=string; label= Styles file dark
+	gallerycontent.cssFileDark = EXT:gallerycontent/Resources/Public/Css/dark-default.css
 # cat=Gallerycontent/gallerycontent; type=boolean[1]; label= Css priority, 0 means CSS is in page footer
   gallerycontent.cssPriority = 1
+# cat=Gallerycontent/gallerycontent; type=string; label= Styles file for lightbox
+	gallerycontent.cssFileLightbox = EXT:gallerycontent/Resources/Public/Css/simple-lightbox.css
+# cat=Gallerycontent/gallerycontent; type=string; label= JavaScript file for lightbox
+	gallerycontent.jsFileLightbox = EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js
 # cat=Gallerycontent/gallerycontent; type=string; label= Maximum image with in one column layout in px
 	gallerycontent.imageWidth = 1320
 # cat=Gallerycontent/gallerycontent; type=string; label= Padding between images in % of outside container

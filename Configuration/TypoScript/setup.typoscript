@@ -1,12 +1,12 @@
 ["{$gallerycontent.forceLightbox}" == "1"]
   page {
-    includeCSS.gallerycontentLightbox = EXT:gallerycontent/Resources/Public/Css/simple-lightbox.css
-    includeJSFooterlibs.gallerycontentLightbox = EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js
+    includeCSS.gallerycontentLightbox = {$gallerycontent.cssFileLightbox}
+    includeJSFooterlibs.gallerycontentLightbox = {$gallerycontent.jsFileLightbox}
   }
 [END]
 
 ["{$gallerycontent.forceLightbox}" == "1" && "{$gallerycontent.lightboxColorScheme}" == "1"]
-    page.includeCSS.gallerycontentLightboxDark = EXT:gallerycontent/Resources/Public/Css/dark-default.css
+    page.includeCSS.gallerycontentLightboxDark = {$gallerycontent.cssFileDark}
 [END]
 
 lib.gallerycontent =< lib.contentElement
@@ -51,7 +51,10 @@ tt_content.gallerycontent {
     enableLightbox = {$gallerycontent.enableLightbox}
     forceLightbox = {$gallerycontent.forceLightbox}
     cssFile = {$gallerycontent.cssFile}
+    cssFileDark = {$gallerycontent.cssFileDark}
     cssPriority = {$gallerycontent.cssPriority}
+    cssFileLightbox = {$gallerycontent.cssFileLightbox}
+    jsFileLightbox = {$gallerycontent.jsFileLightbox}
     forceImageFileFormat = {$gallerycontent.forceImageFileFormat}
     lightboxColorScheme = {$gallerycontent.lightboxColorScheme}
   }
