@@ -127,13 +127,12 @@ $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['columnsOverrides'] = a
     'assets' => [
         'config' => [
             'type' => 'file',
-            'maxitems' => 100,
-            'allowed' => 'jpg,webp,jpeg,gif,pdf,png',
+            'allowed' => $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'],
             'behaviour' => [
                 'allowLanguageSynchronization' => true,
             ],
 			'appearance' => [
-				'createNewRelationLinkTitle' => 'Images',
+				'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference',
 				'showPossibleLocalizationRecords' => true,
 			],
             'behaviour' => [
