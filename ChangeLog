@@ -69,3 +69,5 @@
 * 2.0.0
     - [TASK] make all css and js files sonfigurable with constants
     - [TASK] add v13 and drop v11 compatibility
+* 2.0.1
+    - [TASK] use image types from TYPO3_CONF_VARS
