@@ -49,18 +49,30 @@ class GallerycontentPreviewRenderer extends StandardContentPreviewRenderer
             if ($row['tx_gallerycontent_template'] != 0) {
                 $content .= '<li>' . $this->linkEditContent($this->renderText('Template: ' . $row['tx_gallerycontent_template']), $row) . '</li>';
             }
+
+            if ($row['imagecols']) {
+                $content .= '<li>' . $this->linkEditContent($this->renderText('Columns: ' . $row['imagecols']), $row) . '</li>';
+            }
+            if ($row['tx_gallerycontent_cropratio']) {
+                $content .= '<li>' . $this->linkEditContent($this->renderText('Crop: ' . $row['tx_gallerycontent_cropratio']), $row) . '</li>';
+            }
             if ($row['tx_gallerycontent_showtitle'] === 1) {
                 $content .= '<li>' . $this->linkEditContent($this->renderText('Show titles: yes'), $row) . '</li>';
             }
             if ($row['tx_gallerycontent_showdesc'] === 1) {
                 $content .= '<li>' . $this->linkEditContent($this->renderText('Show descriptions: yes'), $row) . '</li>';
             }
-            $content .= '<li>' . $this->linkEditContent($this->renderText('Image crop: ' . $row['tx_gallerycontent_cropratio']), $row) . '</li>';
-            if ($row['image_zoom'] === 1) {
+            if ($row['image_zoom']) {
                 $content .= '<li>' . $this->linkEditContent($this->renderText('Click-enlarge: yes'), $row) . '</li>';
             }
-            if ($row['image_zoom'] === 1) {
+            if ($row['tx_gallerycontent_cropratiozoom'] && $row['image_zoom']) {
                 $content .= '<li>' . $this->linkEditContent($this->renderText('Click-enlarge crop: ' . $row['tx_gallerycontent_cropratiozoom']), $row) . '</li>';
+            }
+            if ($row['tx_gallerycontent_showtitlezoom'] && $row['image_zoom']) {
+                $content .= '<li>' . $this->linkEditContent($this->renderText('Click-enlarge titles: yes'), $row) . '</li>';
+            }
+            if ($row['tx_gallerycontent_showdesczoom'] && $row['image_zoom']) {
+                $content .= '<li>' . $this->linkEditContent($this->renderText('Click-enlarge descriptions: yes'), $row) . '</li>';
             }
             if ($row['tx_paginatedprocessors_paginationenabled'] == 1) {
                 $content .= '<li>' . $this->linkEditContent('Pagination: enabled', $row) . '</li>';
