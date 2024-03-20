@@ -71,7 +71,9 @@
     - [TASK] add v13 and drop v11 compatibility
 * 2.0.1
     - [TASK] use image types from TYPO3_CONF_VARS
-* 2.2.0
-    - [TASK] Improve v13 compatibility
-    - [TASK] BE preview with Fluid template
-    - [FEATURE] Show actual crop ratio of BE thumbnails
+* 2.1.0
+    - [TASK] formating imageWidth to remove decimals for v13 compatibility
+    - [BUGFIX] remove link.editRecord from template
+    - [BUGFIX] add namespace to ExtensionManagementUtility
+    - [TASK] improve v13 compatibility
+    - [TASK] BE preview with Fluid template and thumbnail cropping
