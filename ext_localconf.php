@@ -7,11 +7,6 @@ use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
 defined('TYPO3') || die('Access denied.');
 
-
-// Register your ViewHelper as a service
-
-
-
 (function () {
     $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
     // Only include page.tsconfig if TYPO3 version is below 12 so that it is not imported twice.
