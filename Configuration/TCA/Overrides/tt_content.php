@@ -2,7 +2,6 @@
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use Brightside\Gallerycontent\Preview\GallerycontentPreviewRenderer;
 
 $GLOBALS['TCA']['tt_content']['ctrl']['typeicon_classes']['gallerycontent'] =  'mimetypes-x-content-gallerycontent';
 
@@ -17,9 +16,11 @@ ExtensionManagementUtility::addTcaSelectItem(
     "tt_content",
     "CType",
     [
-        "Gallery",
-        "gallerycontent",
-        "mimetypes-x-content-gallerycontent"
+        'label' => 'Gallery',
+        'value' => 'gallerycontent',
+        'icon' => 'mimetypes-x-content-gallerycontent',
+        'group' => 'default',
+        'description' => 'Image gallery content element.',
     ],
     'textmedia',
     'after'
@@ -90,8 +91,6 @@ $tempColumns = array(
     ],
 );
 ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
-
-$GLOBALS['TCA']['tt_content']['types']['gallerycontent']['previewRenderer'] = GallerycontentPreviewRenderer::class;
 
 $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['showitem'] = '
     --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
@@ -254,6 +253,8 @@ $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['columnsOverrides'] = a
         ],
 
 );
+$GLOBALS['TCA']['tt_content']['types']['gallerycontent']['previewRenderer']
+    = Brightside\Gallerycontent\Preview\GallerycontentPreviewRenderer::class;
 
 $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentImages']['showitem'] = '
     assets,
@@ -274,9 +275,6 @@ $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentZoom']['showitem'] = '
     tx_gallerycontent_showtitlezoom,
     tx_gallerycontent_showdesczoom,
 ';
-
-
-// $GLOBALS['TCA']['tt_content']['types']['textmedia']['showitem'] = $GLOBALS['TCA']['pages']['types'][1]['showitem'];
 
 // Replace textmedia media section with callerycontent
 if ($extensionConfiguration['gallerycontentReplaceTextmediaMedia']) {

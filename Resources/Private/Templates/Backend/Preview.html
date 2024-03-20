@@ -1,0 +1,25 @@
+<html xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+    <be:link.editRecord uid="{galleryitem.uid}" table="tt_content">
+        <div class="preview-thumbnails" style="--preview-thumbnails-size: 64px">
+            <f:for each="{assets}" as="image" iteration="iterator">
+                <div class="preview-thumbnails-element">
+                        <f:image image="{image}" width="64" cropVariant="{galleryitem.tx_gallerycontent_cropratio}" />
+                </div>
+            </f:for>
+        </div>
+        <ul style="margin: 0; margin-top: 0.5em; padding: 0.2em 1.4em;">
+            <f:if condition="{galleryitem.tx_gallerycontent_template}"><li>Template: {galleryitem.tx_gallerycontent_template}</li></f:if>
+            <f:if condition="{galleryitem.imagecols}"><li>Columns: {galleryitem.imagecols}</li></f:if>
+            <f:if condition="{galleryitem.tx_gallerycontent_cropratio}"><li>Crop ratio: {galleryitem.tx_gallerycontent_cropratio}</li></f:if>
+            <f:if condition="{galleryitem.tx_gallerycontent_showtitle}"><li>Titles: enabled</li></f:if>
+            <f:if condition="{galleryitem.tx_gallerycontent_showdesc}"><li>Descriptions: enabled</li></f:if>
+            <f:if condition="{galleryitem.image_zoom}">
+                <li>Click zoom: enabled</li>
+                <f:if condition="{galleryitem.tx_gallerycontent_cropratiozoom}"><li>Zoom crop ratio: {galleryitem.tx_gallerycontent_cropratiozoom}</li></f:if>
+                <f:if condition="{galleryitem.tx_gallerycontent_showtitlezoom}"><li>Zoom titles: enabled</li></f:if>
+                <f:if condition="{galleryitem.tx_gallerycontent_showdesczoom}"><li>Zoom descriptions: enabled</li></f:if>
+            </f:if>
+            <f:if condition="{galleryitem.tx_paginatedprocessors_paginationenabled}"><li>Pagination: enabled</li></f:if>
+        </ul>
+    </be:link.editRecord>
+</html>
