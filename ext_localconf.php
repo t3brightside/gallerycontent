@@ -16,7 +16,7 @@ defined('TYPO3') || die('Access denied.');
     $versionInformation = GeneralUtility::makeInstance(Typo3Version::class);
     // Only include page.tsconfig if TYPO3 version is below 12 so that it is not imported twice.
     if ($versionInformation->getMajorVersion() < 13) {
-        ExtensionManagementUtility::addPageTSConfig('
+        TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
             @import "EXT:pagelist/Configuration/TSConfig/wizard.tsconfig"
         ');
     }
