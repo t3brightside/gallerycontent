@@ -73,5 +73,5 @@
     - [TASK] use image types from TYPO3_CONF_VARS
 * 2.2.0
     - [TASK] Improve v13 compatibility
-    - [TASK] PageTS newContentElement conditional to v12
-    - [TASK] BE preview using Fluid
+    - [TASK] BE preview with Fluid template
+    - [FEATURE] Show actual crop ratio of BE thumbnails
