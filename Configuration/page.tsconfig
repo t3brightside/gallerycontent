@@ -1,18 +1,3 @@
-
-mod.wizards.newContentElement.wizardItems.common {
-  elements {
-    brightsidegallery {
-      iconIdentifier = mimetypes-x-content-gallerycontent
-      title = Gallery
-      description = Image gallery content element
-      tt_content_defValues {
-        CType = gallerycontent
-      }
-    }
-  }
-  show := addToList(brightsidegallery)
-}
-
 TCEFORM.tt_content.tx_gallerycontent_template.addItems {
   0 = Default
 }

@@ -4,7 +4,7 @@ $EM_CONF[$_EXTKEY] = [
     'title' => 'Gallerycontent',
     'description' => 'Content element for image gallery with preset crop ratios and pagination',
     'category' => 'fe',
-    'version' => '2.0.1',
+    'version' => '2.1.0',
     'state' => 'stable',
     'clearcacheonload' => true,
     'author' => 'Tanel Põld',
@@ -17,10 +17,5 @@ $EM_CONF[$_EXTKEY] = [
             'paginatedprocessors' => '1.6.0 - 1.9.99',
             'embedassets' => '1.3.0-1.9.99',
         ],
-    ],
-    'autoload' => [
-         'psr-4' => [
-                'Brightside\\Gallerycontent\\' => 'Classes'
-         ]
     ],
 ];
