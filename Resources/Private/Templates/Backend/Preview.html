@@ -1,9 +1,8 @@
 <html xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
-    <be:link.editRecord uid="{galleryitem.uid}" table="tt_content">
         <div class="preview-thumbnails" style="--preview-thumbnails-size: 64px">
             <f:for each="{assets}" as="image" iteration="iterator">
                 <div class="preview-thumbnails-element">
-                        <f:image image="{image}" width="64" cropVariant="{galleryitem.tx_gallerycontent_cropratio}" />
+                    <f:image image="{image}" width="64" cropVariant="{galleryitem.tx_gallerycontent_cropratio}" />
                 </div>
             </f:for>
         </div>
@@ -21,5 +20,4 @@
             </f:if>
             <f:if condition="{galleryitem.tx_paginatedprocessors_paginationenabled}"><li>Pagination: enabled</li></f:if>
         </ul>
-    </be:link.editRecord>
 </html>

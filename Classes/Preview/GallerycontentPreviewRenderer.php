@@ -36,9 +36,8 @@ class GallerycontentPreviewRenderer extends StandardContentPreviewRenderer
         if ($record['assets']) {
             $fileReferences = BackendUtility::resolveFileReferences('tt_content', 'assets', $record);
             $view->assign('assets', $fileReferences);
-
         }
         $out = $view->render();
-        return $this->linkEditContent($out, $item->getRecord());
+        return $this->linkEditContent($out, $record);
     }
 }
