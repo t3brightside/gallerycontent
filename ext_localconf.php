@@ -12,7 +12,7 @@ defined('TYPO3') || die('Access denied.');
     // Only include page.tsconfig if TYPO3 version is below 12 so that it is not imported twice.
     if ($versionInformation->getMajorVersion() < 13) {
         TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('
-            @import "EXT:pagelist/Configuration/TSConfig/wizard.tsconfig"
+            @import "EXT:gallerycontent/Configuration/TSConfig/wizard.tsconfig"
         ');
     }
     $iconRegistry = GeneralUtility::makeInstance(IconRegistry::class);
