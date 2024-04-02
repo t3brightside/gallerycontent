@@ -1,6 +1,6 @@
 mod.wizards.newContentElement.wizardItems.common {
   elements {
-    brightsidegallery {
+    gallerycontent {
       iconIdentifier = mimetypes-x-content-gallerycontent
       title = Gallery
       description = Image gallery content element
