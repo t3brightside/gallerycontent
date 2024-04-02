@@ -77,3 +77,6 @@
     - [BUGFIX] add namespace to ExtensionManagementUtility
     - [TASK] improve v13 compatibility
     - [TASK] BE preview with Fluid template and thumbnail cropping
+* 2.1.1
+    - [BUGFIX] fix wizard config for v12
+    - [TASK] fix Readme icon links
