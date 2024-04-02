@@ -9,5 +9,5 @@ mod.wizards.newContentElement.wizardItems.common {
       }
     }
   }
-  show := addToList(brightsidegallery)
+  show := addToList(gallerycontent)
 }
