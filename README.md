@@ -1,7 +1,7 @@
 # Gallerycontent
 [![License](https://poser.pugx.org/t3brightside/gallerycontent/license)](LICENSE.txt)
-[![Packagist](https://img.shields.io/packagist/v/t3brightside/gallerycontent.svg?style=flat)](https://packagist.org/packages/gallerycontent/pagelist)
-[![Downloads](https://poser.pugx.org/t3brightside/gallerycontent/downloads)](https://packagist.org/packages/t3brightside/pagelist)
+[![Packagist](https://img.shields.io/packagist/v/t3brightside/gallerycontent.svg?style=flat)](https://packagist.org/packages/gallerycontent/gallerycontent)
+[![Downloads](https://poser.pugx.org/t3brightside/gallerycontent/downloads)](https://packagist.org/packages/t3brightside/gallerycontent)
 [![Brightside](https://img.shields.io/badge/by-t3brightside.com-orange.svg?style=flat)](https://t3brightside.com)
 
 **TYPO3 CMS extension for well optimised image galleries**
