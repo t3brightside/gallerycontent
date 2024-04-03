@@ -63,3 +63,7 @@ tt_content.gallerycontent {
     editIcons.iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.menu
   }
 }
+
+[typo3.branch == "12.4"]
+   tt_content.gallerycontent.settings.versionTwelve = 1
+[END]
