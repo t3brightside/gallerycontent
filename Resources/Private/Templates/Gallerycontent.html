@@ -23,10 +23,7 @@
         <f:variable name="itemWidth">{100 - spaceWidthTotal / colCount}</f:variable>
         <f:variable name="imageWidthSet">{settings.imageWidth}</f:variable>
         <f:variable name="spaceInPx">{colCount - 1 * settings.imagePadding / 100 * imageWidthSet}</f:variable>
-        <f:if condition="{settings.versionTwelve}">
-            <f:then><f:variable name="imageWidth">{imageWidthSet - spaceInPx / colCount}</f:variable></f:then>
-            <f:else><f:variable name="imageWidth"><f:format.number decimals="0">{imageWidthSet - spaceInPx / colCount}</f:format.number></f:variable></f:else>
-        </f:if>
+        <f:variable name="imageWidth">{imageWidthSet - spaceInPx / colCount}</f:variable>
         <f:variable name="imageWidth_x2">{imageWidth * 2}</f:variable>
 		<f:if condition="{data.tx_gallerycontent_template} == 0">
 			<div id="gallerycontent-{data.uid}" class="gallerycontent ce-gallery template-{data.tx_gallerycontent_template} colcount-{colCount}">
