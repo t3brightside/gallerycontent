@@ -1,0 +1,69 @@
+["{$gallerycontent.forceLightbox}" == "1"]
+  page {
+    includeCSS.gallerycontentLightbox = {$gallerycontent.cssFileLightbox}
+    includeJSFooterlibs.gallerycontentLightbox = {$gallerycontent.jsFileLightbox}
+  }
+[END]
+
+["{$gallerycontent.forceLightbox}" == "1" && "{$gallerycontent.lightboxColorScheme}" == "1"]
+    page.includeCSS.gallerycontentLightboxDark = {$gallerycontent.cssFileDark}
+[END]
+
+lib.gallerycontent =< lib.contentElement
+lib.gallerycontent {
+  templateRootPaths.10 = EXT:gallerycontent/Resources/Private/Templates/
+  templateRootPaths.20 = {$gallerycontent.templateRootPath}
+  partialRootPaths.10 = EXT:gallerycontent/Resources/Private/Partials/
+  partialRootPaths.20 = {$gallerycontent.partialRootPath}
+  layoutRootPaths.10 = EXT:fluid_styled_content/Resources/Private/Layouts/
+  layoutRootPaths.20 = EXT:gallerycontent/Resources/Private/Layouts/
+  layoutRootPaths.30 = {$styles.templates.layoutRootPath}
+}
+tt_content.gallerycontent < lib.gallerycontent
+tt_content.gallerycontent {
+  templateName = Gallerycontent
+  dataProcessing {
+    10 = Brightside\Paginatedprocessors\DataProcessing\PaginatedFilesProcessor
+    10 {
+      pagination {
+        isActive.field = tx_paginatedprocessors_paginationenabled
+        uniqueId.field = uid
+        uniqueId.override.field = tx_paginatedprocessors_urlsegment
+        itemsPerPage = tx_paginatedprocessors_itemsperpage
+        itemsPerPage.field = tx_paginatedprocessors_itemsperpage
+        pageLinksShown = {$gallerycontent.paginationLinks}
+        pageLinksShown.override.field = tx_paginatedprocessors_pagelinksshown
+        anchorActive.field = tx_paginatedprocessors_anchor
+        anchorId.field = uid
+        anchorId.override.field = tx_paginatedprocessors_anchorid
+      }
+      references.fieldName = assets
+      as = assets
+    }
+  }
+  settings {
+    imageWidth = {$gallerycontent.imageWidth}
+    imagePadding = {$gallerycontent.imagePadding}
+    zoomMaxWidth = {$gallerycontent.zoomMaxWidth}
+    zoomMaxHeight = {$gallerycontent.zoomMaxHeight}
+    paginationLinks = {$gallerycontent.paginationLinks}
+    lightboxClass = {$gallerycontent.lightboxClass}
+    enableLightbox = {$gallerycontent.enableLightbox}
+    forceLightbox = {$gallerycontent.forceLightbox}
+    cssFile = {$gallerycontent.cssFile}
+    cssFileDark = {$gallerycontent.cssFileDark}
+    cssPriority = {$gallerycontent.cssPriority}
+    cssFileLightbox = {$gallerycontent.cssFileLightbox}
+    jsFileLightbox = {$gallerycontent.jsFileLightbox}
+    forceImageFileFormat = {$gallerycontent.forceImageFileFormat}
+    lightboxColorScheme = {$gallerycontent.lightboxColorScheme}
+  }
+  stdWrap {
+    editIcons = tt_content: header [header_layout], tt_content
+    editIcons.iconTitle.data = LLL:EXT:fluid_styled_content/Resources/Private/Language/FrontendEditing.xlf:editIcon.menu
+  }
+}
+
+[typo3.branch == "12.4"]
+   tt_content.gallerycontent.settings.versionTwelve = 1
+[END]

@@ -1,0 +1,34 @@
+# cat=Gallerycontent/gallerycontent; type=string; label= Templates root paht
+	gallerycontent.templateRootPath = EXT:gallerycontent/Resources/Private/Templates/
+# cat=Gallerycontent/gallerycontent; type=string; label= Partials root paht
+	gallerycontent.partialRootPath = EXT:gallerycontent/Resources/Private/Partials/
+# cat=Gallerycontent/gallerycontent; type=string; label= Styles file
+	gallerycontent.cssFile = EXT:gallerycontent/Resources/Public/Css/gallerycontent.css
+# cat=Gallerycontent/gallerycontent; type=string; label= Styles file dark
+	gallerycontent.cssFileDark = EXT:gallerycontent/Resources/Public/Css/dark-default.css
+# cat=Gallerycontent/gallerycontent; type=boolean[1]; label= Css priority, 0 means CSS is in page footer
+  gallerycontent.cssPriority = 1
+# cat=Gallerycontent/gallerycontent; type=string; label= Styles file for lightbox
+	gallerycontent.cssFileLightbox = EXT:gallerycontent/Resources/Public/Css/simple-lightbox.css
+# cat=Gallerycontent/gallerycontent; type=string; label= JavaScript file for lightbox
+	gallerycontent.jsFileLightbox = EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js
+# cat=Gallerycontent/gallerycontent; type=string; label= Maximum image with in one column layout in px
+	gallerycontent.imageWidth = 1320
+# cat=Gallerycontent/gallerycontent; type=string; label= Padding between images in % of outside container
+	gallerycontent.imagePadding = 1.5
+# cat=Gallerycontent/gallerycontent; type=string; label= Maximum click enlarge image with in px
+	gallerycontent.zoomMaxWidth = 1800
+# cat=Gallerycontent/gallerycontent; type=string; label= Maximum click enlarge image height in px
+	gallerycontent.zoomMaxHeight = 1200
+# cat=Gallerycontent/gallerycontent; type=string; label= Maximum pagination links shown
+	gallerycontent.paginationLinks = 6
+# cat=Gallerycontent/gallerycontent; type=string; label= Lightbox link class
+	gallerycontent.lightboxClass = lightbox
+# cat=Gallerycontent/gallerycontent; type=boolean; label= Enable integrated lightbox
+  gallerycontent.enableLightbox =
+# cat=Gallerycontent/gallerycontent; type=boolean; label= Force lodaing lightbox even if no gallery on page
+  gallerycontent.forceLightbox =
+# cat=Gallerycontent/gallerycontent; type=boolean; label= Set lightbox default color mode dark
+  gallerycontent.lightboxColorScheme =
+# cat=Gallerycontent/gallerycontent; type=string; label= Force image file format (make sure it's enabled in [GFX][imagefile_ext])
+  gallerycontent.forceImageFileFormat =
