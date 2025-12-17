@@ -87,3 +87,22 @@
 * 2.1.4
     * 7ae1a7e [TASK] update requirements
     * 7ad4cdb [BUGFIX]  #8 image width 1px x 1px
+* 3.0.0
+    e309cd2 [TASK] add site sets
+        A       Configuration/Sets/Configuration/config.yaml
+        A       Configuration/Sets/Configuration/constants.typoscript
+        A       Configuration/Sets/Configuration/setup.typoscript
+    fd0d7fa [TASK] modernise icon handling
+        A       Configuration/Icons.php
+        M       ext_localconf.php
+    c4ee3e3 [TASK] rework back end preview
+        D       Classes/Preview/GallerycontentPreviewRenderer.php
+        M       Configuration/TCA/Overrides/tt_content.php
+        M       Configuration/page.tsconfig
+        M       Resources/Private/Templates/Backend/Preview.html
+    202b871 [TASK] add v14 and drop v12 compatibility
+        D       Configuration/TSConfig/wizard.tsconfig
+        M       composer.json
+        M       ext_emconf.php
+    3e4ee64 [TASK] improve back end preview
+        M       Resources/Private/Templates/Backend/Preview.html
