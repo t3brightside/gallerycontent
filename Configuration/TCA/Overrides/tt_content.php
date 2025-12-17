@@ -253,8 +253,6 @@ $GLOBALS['TCA']['tt_content']['types']['gallerycontent']['columnsOverrides'] = a
         ],
 
 );
-$GLOBALS['TCA']['tt_content']['types']['gallerycontent']['previewRenderer']
-    = Brightside\Gallerycontent\Preview\GallerycontentPreviewRenderer::class;
 
 $GLOBALS['TCA']['tt_content']['palettes']['gallerycontentImages']['showitem'] = '
     assets,

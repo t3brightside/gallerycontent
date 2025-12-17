@@ -26,3 +26,12 @@ TCEFORM.tt_content.tx_gallerycontent_cropratiozoom.addItems {
   skyscraper = Skyscraper (1:2.39)
   none = None
 }
+
+mod.web_layout {
+  tt_content {
+    preview {
+      gallerycontent = EXT:gallerycontent/Resources/Private/Templates/Backend/Preview.html
+    }
+  }
+}
+

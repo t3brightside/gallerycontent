@@ -1,23 +1,127 @@
-<html xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
-        <div class="preview-thumbnails" style="--preview-thumbnails-size: 64px">
-            <f:for each="{assets}" as="image" iteration="iterator">
-                <div class="preview-thumbnails-element">
-                    <f:image image="{image}" width="64" cropVariant="{galleryitem.tx_gallerycontent_cropratio}" />
-                </div>
-            </f:for>
-        </div>
-        <ul style="margin: 0; margin-top: 0.5em; padding: 0.2em 1.4em;">
-            <f:if condition="{galleryitem.tx_gallerycontent_template}"><li>Template: {galleryitem.tx_gallerycontent_template}</li></f:if>
-            <f:if condition="{galleryitem.imagecols}"><li>Columns: {galleryitem.imagecols}</li></f:if>
-            <f:if condition="{galleryitem.tx_gallerycontent_cropratio}"><li>Crop ratio: {galleryitem.tx_gallerycontent_cropratio}</li></f:if>
-            <f:if condition="{galleryitem.tx_gallerycontent_showtitle}"><li>Titles: enabled</li></f:if>
-            <f:if condition="{galleryitem.tx_gallerycontent_showdesc}"><li>Descriptions: enabled</li></f:if>
-            <f:if condition="{galleryitem.image_zoom}">
-                <li>Click zoom: enabled</li>
-                <f:if condition="{galleryitem.tx_gallerycontent_cropratiozoom}"><li>Zoom crop ratio: {galleryitem.tx_gallerycontent_cropratiozoom}</li></f:if>
-                <f:if condition="{galleryitem.tx_gallerycontent_showtitlezoom}"><li>Zoom titles: enabled</li></f:if>
-                <f:if condition="{galleryitem.tx_gallerycontent_showdesczoom}"><li>Zoom descriptions: enabled</li></f:if>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
+      xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" 
+      data-namespace-typo3-fluid="true">
+
+    <f:asset.css identifier="gallery-preview-style">
+        .gallery-preview { color: inherit; display: block; }
+        
+        /* Thumbnails Flex Layout */
+        .preview-thumbnails { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 5px; 
+            align-items: stretch;
+        }
+        .preview-thumbnails-element {
+            display: flex;
+        }
+        .preview-thumbnails-counter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            padding: 0 10px;
+            min-width: 64px;
+        }
+
+        .gallery-preview-content { 
+            margin-top: 1rem; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 1rem; 
+        }
+        
+        .gallery-row { 
+            display: flex; 
+            align-items: flex-start; 
+            text-decoration: none; 
+            color: inherit; 
+        }
+        
+        .gallery-label { flex: 0 0 140px; font-weight: bold; }
+        .gallery-values { flex: 1; display: flex; flex-direction: column; }
+    </f:asset.css>
+
+    <div class="gallery-preview">
+        <f:variable name="visibleCount">0</f:variable>
+        <f:for each="{record.assets}" as="img">
+            <f:if condition="{img.properties.hidden} == 0"><f:variable name="visibleCount" value="{visibleCount + 1}" /></f:if>
+        </f:for>
+        <f:variable name="imageCount" value="{visibleCount}" />
+
+        <be:link.editRecord table="tt_content" uid="{record.uid}">
+            <div class="preview-thumbnails">
+                <f:variable name="maxThumbnails">9</f:variable>
+                <f:variable name="renderedCount">0</f:variable>
+                
+                <f:for each="{record.assets}" as="image">
+                    <f:if condition="{image.properties.hidden} == 0">
+                        <f:if condition="{renderedCount} < {maxThumbnails}">
+                            <f:then>
+                                <div class="preview-thumbnails-element">
+                                    <f:image image="{image}" width="64" cropVariant="{record.tx_gallerycontent_cropratio}" />
+                                </div>
+                                <f:variable name="renderedCount" value="{renderedCount + 1}" />
+                            </f:then>
+                        </f:if>
+                    </f:if>
+                </f:for>
+
+                <f:if condition="{imageCount} > {maxThumbnails}">
+                    <div class="preview-thumbnails-element">
+                        <div class="preview-thumbnails-counter">
+                            +{imageCount - maxThumbnails}
+                        </div>
+                    </div>
+                </f:if>
+            </div>
+        </be:link.editRecord>
+
+        <div class="gallery-preview-content">
+            <f:if condition="{record.tx_gallerycontent_template}">
+                <be:link.editRecord table="tt_content" uid="{record.uid}" class="gallery-row">
+                    <span class="gallery-label">Template:</span>
+                    <span class="gallery-values">{record.tx_gallerycontent_template}</span>
+                </be:link.editRecord>
             </f:if>
-            <f:if condition="{galleryitem.tx_paginatedprocessors_paginationenabled}"><li>Pagination: enabled</li></f:if>
-        </ul>
+
+            <f:if condition="{imageCount} > 0">
+                <be:link.editRecord table="tt_content" uid="{record.uid}" class="gallery-row">
+                    <span class="gallery-label">
+                        <f:if condition="{imageCount} > 1"><f:then>Images:</f:then><f:else>Image:</f:else></f:if>
+                    </span>
+                    <div class="gallery-values">
+                        <f:if condition="{imageCount} > 1"><f:if condition="{record.imagecols}"><span>in {record.imagecols} columns</span></f:if></f:if>
+                        <f:if condition="{record.tx_gallerycontent_cropratio}"><span>cropped to {record.tx_gallerycontent_cropratio}</span></f:if>
+                        <f:if condition="{record.tx_gallerycontent_showtitle}"><span>show title</span></f:if>
+                        <f:if condition="{record.tx_gallerycontent_showdesc}"><span>show description</span></f:if>
+                    </div>
+                </be:link.editRecord>
+            </f:if>
+
+            <f:if condition="{record.image_zoom}">
+                <be:link.editRecord table="tt_content" uid="{record.uid}" class="gallery-row">
+                    <span class="gallery-label">Enlarge on click:</span>
+                    <div class="gallery-values">
+                        <f:if condition="{record.tx_gallerycontent_cropratiozoom}"><span>cropped to {record.tx_gallerycontent_cropratiozoom}</span></f:if>
+                        <f:if condition="{record.tx_gallerycontent_showtitlezoom}"><span>show title</span></f:if>
+                        <f:if condition="{record.tx_gallerycontent_showdesczoom}"><span>show description</span></f:if>
+                    </div>
+                </be:link.editRecord>
+            </f:if>
+
+            <f:if condition="{record.tx_paginatedprocessors_paginationenabled}">
+                <be:link.editRecord table="tt_content" uid="{record.uid}" class="gallery-row">
+                    <span class="gallery-label">Pagination:</span>
+                    <div class="gallery-values">
+                        <f:if condition="{record.tx_paginatedprocessors_itemsperpage}"><span>{record.tx_paginatedprocessors_itemsperpage} items per page</span></f:if>
+                        <f:if condition="{record.tx_paginatedprocessors_pagelinksshown}"><span>{record.tx_paginatedprocessors_pagelinksshown} links shown</span></f:if>
+                        <f:if condition="{record.tx_paginatedprocessors_anchorid} > 0"><f:then><span>focus on ID: {record.tx_paginatedprocessors_anchorid}</span></f:then>
+                        <f:else><f:if condition="{record.tx_paginatedprocessors_anchor}"><span>focus on: self</span></f:if></f:else></f:if>
+                        <f:if condition="{record.tx_paginatedprocessors_urlsegment}"><span>URL segment: {record.tx_paginatedprocessors_urlsegment}</span></f:if>
+                    </div>
+                </be:link.editRecord>
+            </f:if>
+        </div>
+    </div>
 </html>
