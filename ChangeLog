@@ -106,3 +106,7 @@
         M       ext_emconf.php
     3e4ee64 [TASK] improve back end preview
         M       Resources/Private/Templates/Backend/Preview.html
+3.0.1
+    7e656e2 [TASK] add sets settings definitions
+        D       Configuration/Sets/Configuration/constants.typoscript
+        A       Configuration/Sets/Configuration/settings.definitions.yaml
