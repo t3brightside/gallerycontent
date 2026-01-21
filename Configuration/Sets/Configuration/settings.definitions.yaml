@@ -1,0 +1,116 @@
+categories:
+  Gallerycontent:
+    label: 'Gallerycontent'
+  Gallerycontent.templates:
+    label: 'Templates'
+    parent: Gallerycontent
+  Gallerycontent.images:
+    label: 'Images'
+    parent: Gallerycontent
+  Gallerycontent.lightbox:
+    label: 'Lightbox'
+    parent: Gallerycontent
+
+settings:
+  gallerycontent.templateRootPath:
+    label: 'Templates'
+    category: Gallerycontent.templates 
+    description: 'Path to template root'
+    type: string
+    default: 'EXT:gallerycontent/Resources/Private/Templates/'
+  gallerycontent.partialRootPath:
+    label: 'Partials'
+    category: Gallerycontent.templates
+    description: 'Path to partial root'
+    type: string
+    default: 'EXT:gallerycontent/Resources/Private/Partials/'
+  gallerycontent.cssFile:
+    label: 'Styles file'
+    category: Gallerycontent.templates
+    description: 'Path to main CSS file'
+    type: string
+    default: 'EXT:gallerycontent/Resources/Public/Css/gallerycontent.css'
+  gallerycontent.cssFileDark:
+    label: 'Styles file dark'
+    category: Gallerycontent.templates
+    description: 'Path to dark mode CSS file'
+    type: string
+    default: 'EXT:gallerycontent/Resources/Public/Css/dark-default.css'
+  gallerycontent.cssPriority:
+    label: 'Css priority'
+    category: Gallerycontent.templates
+    description: 'Set to 1 to load CSS in page header, 0 in page footer'
+    type: bool
+    default: 1
+  gallerycontent.imageWidth:
+    label: 'Maximum image with in one column layout in px'
+    category: Gallerycontent.images
+    description: 'Multicolumn layout image widths are calculated automatically'
+    type: int
+    default: 1320
+  gallerycontent.imagePadding:
+    label: 'Padding between images in %'
+    category: Gallerycontent.images
+    description: 'Set padding between images as percentage of the outside container'
+    type: string
+    default: 1.5
+  gallerycontent.zoomMaxWidth:
+    label: 'Maximum click enlarge image with in px'
+    category: Gallerycontent.images
+    description: 'Set maximum width for enlarged images'
+    type: int
+    default: 1800
+  gallerycontent.zoomMaxHeight:
+    label: 'Maximum click enlarge image height in px'
+    category: Gallerycontent.images
+    description: 'Set maximum height for enlarged images'
+    type: int
+    default: 1200
+  gallerycontent.forceImageFileFormat:
+    label: 'Force image file format'
+    category: Gallerycontent.images
+    description: 'Make sure the file format is enabled globally'
+    type: string
+    default: ''
+  gallerycontent.paginationLinks:
+    label: 'Maximum pagination links'
+    category: Gallerycontent.images
+    description: 'Set maximum number of pagination page links shown'
+    type: int
+    default: 6
+  gallerycontent.enableLightbox:
+    label: 'Enable lightbox'
+    category: Gallerycontent.lightbox
+    description: 'Enable or disable the integrated lightbox'
+    type: bool
+    default: 0
+  gallerycontent.lightboxColorScheme:
+    label: 'Set lightbox color to dark'
+    category: Gallerycontent.lightbox
+    description: 'Set the default color scheme of the lightbox to dark mode'
+    type: bool
+    default: 0
+  gallerycontent.forceLightbox:
+    label: 'Force lodaing lightbox scripts'
+    category: Gallerycontent.lightbox
+    description: 'Load lightbox JS & CSS even if no gallery is present on the page'
+    type: bool
+    default: 0
+  gallerycontent.cssFileLightbox:
+    label: 'Styles for lightbox'
+    category: Gallerycontent.lightbox
+    description: 'Path to lightbox CSS file'
+    type: string
+    default: 'EXT:gallerycontent/Resources/Public/Css/simple-lightbox.css'
+  gallerycontent.jsFileLightbox:
+    label: 'JavaScript for lightbox'
+    category: Gallerycontent.lightbox
+    description: 'Path to lightbox JavaScript file'
+    type: string
+    default: 'EXT:gallerycontent/Resources/Public/JavaScript/simple-lightbox.min.js'
+  gallerycontent.lightboxClass:
+    label: 'Lightbox link class'
+    category: Gallerycontent.lightbox
+    description: 'CSS class for lightbox links'
+    type: string
+    default: 'lightbox'
