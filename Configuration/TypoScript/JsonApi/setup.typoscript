@@ -1,0 +1,62 @@
+# ---------------------------------------------------------
+# GALLERYCONTENT HEADLESS OVERRIDE
+# ---------------------------------------------------------
+# 1. Nuke the default HTML rendering from the extension
+tt_content.gallerycontent >
+
+# 2. Inherit the pure Headless JSON structure
+tt_content.gallerycontent =< lib.contentElement
+
+# 3. Map the fields specifically for JSON
+tt_content.gallerycontent.fields {
+    
+    tx_gallerycontent_template = TEXT
+    tx_gallerycontent_template.field = tx_gallerycontent_template
+    imagecols = TEXT
+    imagecols.field = imagecols
+    image_zoom = TEXT
+    image_zoom.field = image_zoom
+    tx_gallerycontent_cropratio = TEXT
+    tx_gallerycontent_cropratio.field = tx_gallerycontent_cropratio
+    tx_gallerycontent_cropratiozoom = TEXT
+    tx_gallerycontent_cropratiozoom.field = tx_gallerycontent_cropratiozoom
+    tx_gallerycontent_showtitle = TEXT
+    tx_gallerycontent_showtitle.field = tx_gallerycontent_showtitle
+    tx_gallerycontent_showdesc = TEXT
+    tx_gallerycontent_showdesc.field = tx_gallerycontent_showdesc
+
+    tx_paginatedprocessors_itemsperpage = TEXT
+    tx_paginatedprocessors_itemsperpage.field = tx_paginatedprocessors_itemsperpage
+    tx_paginatedprocessors_pagelinksshown = TEXT
+    tx_paginatedprocessors_pagelinksshown.field = tx_paginatedprocessors_pagelinksshown
+    tx_paginatedprocessors_pagelinksshown.ifEmpty = {$gallerycontent.paginationLinks}
+
+    setting_imagePadding = TEXT
+    setting_imagePadding.value = {$gallerycontent.imagePadding}
+    setting_enableLightbox = TEXT
+    setting_enableLightbox.value = {$gallerycontent.enableLightbox}
+    
+    setting_label_first = TEXT
+    setting_label_first.value = {$paginatedprocessors.firstLabel}
+    setting_label_prev = TEXT
+    setting_label_prev.value = {$paginatedprocessors.previousLabel}
+    setting_label_next = TEXT
+    setting_label_next.value = {$paginatedprocessors.nextLabel}
+    setting_label_last = TEXT
+    setting_label_last.value = {$paginatedprocessors.lastLabel}
+
+    gallerycontent_json = TEXT
+    gallerycontent_json {
+        cObject = FLUIDTEMPLATE
+        cObject {
+            dataProcessing {
+                10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                10 {
+                    references.fieldName = assets
+                    as = assets
+                }
+            }
+            file = EXT:gallerycontent/Resources/Private/Templates/GalleryContentHeadless.html
+        }
+    }
+}

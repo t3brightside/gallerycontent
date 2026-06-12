@@ -1,0 +1,11 @@
+[<f:if condition="{assets}"><f:for each="{assets}" as="asset" iteration="i">
+    {
+        "uid": <f:format.raw><f:format.json>{asset.uid}</f:format.json></f:format.raw>,
+        "title": <f:if condition="{asset.properties.title}"><f:then><f:format.raw><f:format.json>{asset.properties.title}</f:format.json></f:format.raw></f:then><f:else>null</f:else></f:if>,
+        "description": <f:if condition="{asset.properties.description}"><f:then><f:format.raw><f:format.json>{asset.properties.description}</f:format.json></f:format.raw></f:then><f:else>null</f:else></f:if>,
+        "alternative": <f:if condition="{asset.properties.alternative}"><f:then><f:format.raw><f:format.json>{asset.properties.alternative}</f:format.json></f:format.raw></f:then><f:else>null</f:else></f:if>,
+        "link": <f:if condition="{asset.properties.link}"><f:then><f:format.raw><f:format.json>{asset.properties.link}</f:format.json></f:format.raw></f:then><f:else>null</f:else></f:if>,
+        "src": <f:format.raw><f:format.json>{f:uri.image(image: asset, cropVariant: data.tx_gallerycontent_cropratio, maxWidth: 1200)}</f:format.json></f:format.raw>,
+        "zoomSrc": <f:format.raw><f:format.json>{f:uri.image(image: asset, cropVariant: data.tx_gallerycontent_cropratiozoom, maxWidth: 1920, maxHeight: 1080)}</f:format.json></f:format.raw>
+    }<f:if condition="{i.isLast}"><f:else>,</f:else></f:if>
+</f:for></f:if>]

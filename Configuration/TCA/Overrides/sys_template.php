@@ -11,3 +11,9 @@
     'Configuration/TypoScript/Textmedia',
     'Gallerycontent for Text & Media'
 );
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+    'gallerycontent',
+    'Configuration/TypoScript/JsonApi/',
+    'Gallerycontent - JSON API'
+);
